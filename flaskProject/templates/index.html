@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Home
+Avaleht
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to the home page!</h1>
+<h1>Kassisõprade foorum</h1>
+    <body>
+        <section>
+            <nav>
+                <div class="search-container">
+                    <form action="/search" method="get">
+                    <input type="text" placeholder="Otsi..." name="query">
+                    <button type="submit">Otsi</button>
+        </form>
+                <ul>
+                    <li><a href="#">Postituse pealkiri</a></li>
+                    <li><img src="{{ url_for('static', filename='ksss.jpg') }}" /></li>
+                    <li><a href="#">Postituse pealkiri</a></li>
+                    <li><img src="{{ url_for('static', filename='gato.jpg') }}" /></li>
+                    <li><a href="#">Postituse pealkiri</a></li>
+                    <li><img src="{{ url_for('static', filename='mqdefault.jpg') }}" /></li>
+                </ul>
+            </nav>
+        </section>
+    </body>
 {% endblock %}
