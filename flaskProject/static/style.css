@@ -1,5 +1,5 @@
 .container {
-  position: absolute;
+    position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -7,18 +7,30 @@
 }
 
 .container .box {
-  width: 900px;
-  height: 600px;
-  background-color: LavenderBlush;
-  color: white;
-  text-align: center;
-  display: flex;
+    width: 1000px;
+    height: 800px;
+    background-color: LavenderBlush;
+    display: flex;
+    border: solid;
+}
+
+.container .box .pinkline {
+    background-color: #E7A0B7;
+    width: 1000px;
+    height: 50px;
+    border: solid;
 }
 
 .container .box .pfp {
     position: absolute;
     top: 10%;
-    left: 10%;
+    left: 10%
+}
+
+.container .box .biotitle {
+    position: absolute;
+    top: 12%;
+    left: 50%;
 }
 
 .container .box .biobox {
@@ -27,7 +39,59 @@
     background-color: white;
     position: absolute;
     top: 15%;
-    left: 50%
+    left: 50%;
+    border: solid;
+}
+
+.container .box .accountname {
+    position: absolute;
+    top: 45%;
+    background-color: white;
+    border: solid;
+    width: 270px;
+    height: 35px;
+    left: 10%;
+}
+
+.container .box .kuvanimi {
+    position: absolute;
+    top: 42%;
+    left: 10%
+}
+
+.container .box .faktibox {
+    position: absolute;
+    top: 57%;
+    background-color: white;
+    border: solid;
+    width: 270px;
+    height: 150px;
+    left: 10%;
+}
+
+.container .box .faktid {
+    position: absolute;
+    top: 54%;
+    left: 10%
+}
+
+.container .box .salvestabutton {
+    background-color: #E7A0B7;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    top: 65%;
+    right: 21%;
+    transform: scale(1.05);
+}
+
+.container .box .salvestabutton .salvesta {
+    text-align: center;
 }
 
 h1 {
@@ -47,14 +111,12 @@ body {
 }
 
 * {
-    font-family: Garamond;
+    font-family: Garamond, serif;
 }
 
 nav {
   float: left;
-  width: 30%;
-  height: 1200px;
-    width: 500px;
+  height: 10%;
   background: beige;
   padding: 20px;
     align-content: center;
@@ -70,4 +132,68 @@ section::after {
     content: "";
     display: table;
     clear: both;
+}
+
+/* navbari stiil */
+        /* Add a black background color to the top navigation */
+.navbar {
+    background-color: darkgrey;
+    overflow: hidden;
+    width: 100%;
+    height: 2%;
+}
+/* Default: Show nav-links and hide the menu toggle on desktop */
+.navbar .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+    /* Style the links inside the navigation bar */
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+}
+
+    /* Change the color of links on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: lightpink;
+}
+
+    /* Add a color to the active/current link */
+.navbar a.active {
+    background-color: lightpink;
+    color: rebeccapurple;
+}
+.navbar .menu-toggle {
+    display: none; /* Hide by default (desktop) */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none; /* Hide by default on mobile */
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .navbar .nav-links.visible {
+        display: flex; /* Show when the 'visible' class is added */
+    }
+
+    .navbar .menu-toggle {
+        display: block; /* Show only on mobile */
+        cursor: pointer;
+        color: white;
+        font-size: 1.5em;
+    }
 }

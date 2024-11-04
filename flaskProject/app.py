@@ -5,8 +5,16 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template('index.html')
+
+@app.route('/profiiliseaded')
+def profiiliseaded():
+    return render_template('profiiliseaded.html')
+
+@app.route('/enda_konto')
+def enda_konto():
+    return render_template('enda_konto.html')
 
 
 if __name__ == '__main__':
