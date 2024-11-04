@@ -1,17 +1,14 @@
 .container {
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
+   display: flex;
+    justify-self: center;
 }
 
 .container .box {
     width: 1000px;
     height: 800px;
     background-color: LavenderBlush;
-    display: flex;
     border: solid;
+    display: flex;
 }
 
 .container .box .pinkline {
@@ -23,14 +20,14 @@
 
 .container .box .pfp {
     position: absolute;
-    top: 10%;
-    left: 10%
+    top: 20%;
+    left: 5%;
 }
 
 .container .box .biotitle {
     position: absolute;
-    top: 12%;
-    left: 50%;
+    top: 21%;
+    left: 34%;
 }
 
 .container .box .biobox {
@@ -38,41 +35,42 @@
     height:300px;
     background-color: white;
     position: absolute;
-    top: 15%;
-    left: 50%;
+    top: 25%;
+    left: 34%;
     border: solid;
+    display: flex;
 }
 
 .container .box .accountname {
     position: absolute;
-    top: 45%;
+    top: 50%;
     background-color: white;
     border: solid;
     width: 270px;
     height: 35px;
-    left: 10%;
+    left: 5%;
 }
 
 .container .box .kuvanimi {
     position: absolute;
-    top: 42%;
-    left: 10%
+    top: 47%;
+    left: 5%
 }
 
 .container .box .faktibox {
     position: absolute;
-    top: 57%;
+    top: 60%;
     background-color: white;
     border: solid;
     width: 270px;
     height: 150px;
-    left: 10%;
+    left: 5%;
 }
 
 .container .box .faktid {
     position: absolute;
-    top: 54%;
-    left: 10%
+    top: 57%;
+    left: 5%
 }
 
 .container .box .salvestabutton {
@@ -86,7 +84,7 @@
     height: 40px;
     position: absolute;
     top: 65%;
-    right: 21%;
+    right: 46%;
     transform: scale(1.05);
 }
 
@@ -104,10 +102,6 @@ h1 {
 
 body {
     background-color: lightpink;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 * {
