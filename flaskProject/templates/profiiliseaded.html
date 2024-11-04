@@ -1,19 +1,36 @@
-<!DOCTYPE html>
-<html lang="et">
-<head>
-    <meta charset="UTF-8">
-    <title>Profiiliseaded</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% extends 'base.html' %}
+
+{% block title %}
+Profiiliseaded
+{% endblock %}
+
+{% block content %}
 <body>
     <div class="container">
         <div class="box">
+            <div class="biotitle">
+                <b>Bio</b>
+            </div>
+            <div class="kuvanimi">
+                <b>Kuvanimi</b>
+            </div>
+            <div class="faktid">
+                <b>Faktid</b>
+            </div>
+            <div class="pinkline"></div>
             <div class="pfp">
                 <img src="{{ url_for('static', filename='ai_cat.png') }}" width="200" height="200"/>
             </div>
             <div class="biobox"></div>
+            <div class="faktibox"></div>
+            <div class="accountname"></div>
+            <div class="salvestabutton">
+                <div class="salvesta">
+                    <b>Salvesta</b>
+                </div>
+            </div>
         </div>
     </div>
 
 </body>
-</html>
+{% endblock %}
