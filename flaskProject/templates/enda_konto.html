@@ -1,76 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Enda konto</title>
-  <style>
-        /* Add a black background color to the top navigation */
-    .topnav {
-      background-color: darkgrey;
-      overflow: hidden;
-    }
+{% extends 'base.html' %}
+{% block title %}
+enda_konto
+{% endblock %}
 
-    /* Style the links inside the navigation bar */
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 93px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    /* Change the color of links on hover */
-    .topnav a:hover {
-      background-color: #ddd;
-      color: lightpink;
-    }
-
-    /* Add a color to the active/current link */
-    .topnav a.active {
-        background-color: lightpink;
-        color: rebeccapurple;
-    }
-    .image-with-text {
-  display: flex;
-  align-items: center;
-    background-color:lightpink;
-    }
-    .image-with-text img {
-    margin-right: 10px; /* adjust as needed */
-    }
-    .my-button {
-    background-color: gray;
-    color: white;
-    margin: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-    .second-textbox {
-        align-items: baseline;
-        background-color: lightpink;
-    }
-  </style>
-</head>
-<body>
-  <div class="topnav">
-    <a class="active" href="#pealeht">Pealeht</a> <a href="#s%C3%B5numid">Sõnumid</a> <a href="#uus_postitus">Uus postitus</a> <a href="#enda_konto">Enda konto</a> <a href="#meist">Meist</a>
-  </div>
-  <div class="image-with-text">
-  <img src="https://miro.medium.com/v2/resize:fit:1200/1*ReCVqD3PcPVJg987DXmLDw.jpeg" style="padding: 20px" width="300" height="300">
-  <p>Tere, kassiinimesed! 😺
+{% block content %}
+<body style="background-color:rgba(236,208,216,0.6);">
+  <div class="heading-enda-konto"><h1>Kassiemme60</h1></div>
+  <div class="image-with-text-enda-konto">
+    <img src="https://miro.medium.com/v2/resize:fit:1200/1*ReCVqD3PcPVJg987DXmLDw.jpeg" style="padding: 20px" width="300" height="300">
+    <p>Tere, kassiinimesed! 😺
 Olen 60-aastane suur kassisõber, kes jagab oma kodu ja südant 7 imelise kassiga. Nende nimed on Triibu, Miisu, Kohvikoor, Fanta, Albert, Mjäu ja Krõps 💖. Elu nende väikeste karvaste tegelastega on täis rõõmu, seiklusi ja vahel ka väikest pahandust. Kassid on olnud minu truud kaaslased juba aastaid ning nendega koos on iga päev omaette kingitus.
 Kui mul ei ole parajasti käed täis kasside paitamist või nendele maiuste jagamist, siis armastan lugeda, aiatööd teha ja kuulata looduse hääli. Naudin ka rahulikku olemist koos oma kiisude seltsis – nemad teavad täpselt, kuidas maailma stressid unustada.
 Siit foorumist loodan leida mõttekaaslasi, kellega jagada kasside rõõme ja muresid. Ootan huviga teie lugusid ja kogemusi, sest kassiomanikuks olemine on alati midagi, millest õppida. 💬
 Kassijuttu ikka jätkub, nii et võtke julgesti ühendust! 😊</p>
 </div>
-<button class="my-button">Muuda profiili</button>
-<div class="second-textbox">
-    <p>-60</p>
+  <button class="my-button-enda-konto">Muuda profiili</button>
+<div class="second-textbox-enda-konto">
+  <p>-60</p>
   <p>-Kassid💖</p>
   <p>-Lapselapsed💖</p>
+  </div>
+  <div class="posts-enda-konto">
+    <button class="second-button-enda-konto">Minu postitused</button>
+    <p>Pilt Miisust magamas!!</p>
+    <p>Albertil on ussid, palun aidake!:(</p>
+  </div>
+
 </div>
 </body>
-</html>
+{% endblock %}
