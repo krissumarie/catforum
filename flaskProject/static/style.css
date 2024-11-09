@@ -105,6 +105,47 @@
     justify-self: flex-end;
 }
 
+.sisselogimiscontainer {
+    justify-self: center;
+    background-color: white;
+    width: 80%;
+}
+
+.kass_ja_logikast {
+    display: flex;
+    justify-content: space-around;
+}
+
+.kassp {
+    width: 40%;
+}
+
+.logikast {
+    width: 60%;
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+    padding-top: 10em;
+    align-items: center;
+}
+
+.inputboxss {
+    width: 50%;
+}
+
+.logisisse {
+    width: 50%;
+}
+
+.tekstlogi {
+    display: flex;
+    justify-self: center;
+}
+
+.kiisusiluett {
+    width: 100%;
+}
+
 h1 {
     border-bottom-style: solid;
     border-color: black;
