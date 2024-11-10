@@ -27,5 +27,13 @@ Kassijuttu ikka jätkub, nii et võtke julgesti ühendust! 😊</p>
   </div>
 
 </div>
+<form action="{{ url_for('signup') }}" method="POST" style="display:flex; flex-direction:column;">
+            <label for="name" id="name">Name</label>
+            <input type="text" name="name" required>
+            <label for="password" id="password">Password</label>
+            <input type="password" name="password" required>
+            <button type="submit">Register</button>
+</form>
 </body>
 {% endblock %}
+
