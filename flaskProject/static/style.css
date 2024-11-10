@@ -326,7 +326,7 @@ section::after {
      display: flex;
      align-items: center;
      height: 300px;
-     background-color: #fff4f2;
+     background-color: lavenderblush;;
      width: 1260px;
      top: 20%;
      left: 1%;
@@ -354,17 +354,10 @@ section::after {
      cursor: pointer;
 }
  .second-textbox-enda-konto {
+     padding-left: 20px;
      width: 200px;
      height: 300px;
-     background-color: #fff4f2;
+     background-color: lavenderblush;
      top: 69%;
      left: 1%
-}
- .posts-enda-konto {
-     padding-left: 10px;
-     background-color: #fff4f2;
-     left: 25.7%;
-     top: 54%;
-     width: 929px;
-     height: 250px;
 }

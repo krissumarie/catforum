@@ -4,7 +4,6 @@ enda_konto
 {% endblock %}
 
 {% block content %}
-<body style="background-color:rgba(236,208,216,0.6);">
   <div class="heading-enda-konto"><h1>Kassiemme60</h1></div>
   <div class="image-with-text-enda-konto">
     <img src="https://miro.medium.com/v2/resize:fit:1200/1*ReCVqD3PcPVJg987DXmLDw.jpeg" style="padding: 20px" width="300" height="300">
@@ -20,20 +19,7 @@ Kassijuttu ikka jätkub, nii et võtke julgesti ühendust! 😊</p>
   <p>-Kassid💖</p>
   <p>-Lapselapsed💖</p>
   </div>
-  <div class="posts-enda-konto">
-    <button class="second-button-enda-konto">Minu postitused</button>
-    <p>Pilt Miisust magamas!!</p>
-    <p>Albertil on ussid, palun aidake!:(</p>
-  </div>
 
 </div>
-<form action="{{ url_for('signup') }}" method="POST" style="display:flex; flex-direction:column;">
-            <label for="name" id="name">Name</label>
-            <input type="text" name="name" required>
-            <label for="password" id="password">Password</label>
-            <input type="password" name="password" required>
-            <button type="submit">Register</button>
-</form>
 </body>
 {% endblock %}
-

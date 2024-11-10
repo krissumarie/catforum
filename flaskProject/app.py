@@ -34,6 +34,14 @@ def signup():
     create_user(name, password)
     return redirect("/")
 
+@app.route('/sisselogimine')
+def sisselogimine():
+    return render_template('sisselogimine.html')
+
+@app.route('/registreerimine')
+def registreerimine():
+    return render_template('registreerimine.html')
+
 
 if __name__ == '__main__':
     app.run()
