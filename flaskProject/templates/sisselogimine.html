@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Logi sisse
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="sisselogimiscontainer">
+    <div class="kass_ja_logikast">
+        <div class="kassp">
+            <img class="kiisusiluett" src="{{ url_for('static', filename='iluskass.png') }}"/>
+        </div>
+        <div class="logikast">
+            <b class="tekstlogi">Logi sisse</b>
+            <div class="epost">
+                <b>E-posti aadress</b>
+                <input class="inputboxss">
+            </div>
+            <div class="parool">
+                <b>Parool</b>
+                <input class="inputboxss">
+            </div>
+            <button class="logisisse">Logi sisse</button>
+            <b>-------- või --------</b>
+            <div class="regatekst">
+                <b>Registreeri kasutajaks</b>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+{% endblock %}

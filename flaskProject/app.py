@@ -16,6 +16,10 @@ def profiiliseaded():
 def enda_konto():
     return render_template('enda_konto.html')
 
+@app.route('/sisselogimine')
+def sisselogimine():
+    return render_template('sisselogimine.html')
+
 
 if __name__ == '__main__':
     app.run()

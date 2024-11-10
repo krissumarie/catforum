@@ -105,6 +105,86 @@
     justify-self: flex-end;
 }
 
+.sisselogimiscontainer {
+    justify-self: center;
+    background-color: white;
+    width: 80%;
+    border-style: solid;
+    border-color: grey;
+}
+
+.kass_ja_logikast {
+    display: flex;
+    justify-content: space-around;
+}
+
+.kassp {
+    width: 40%;
+    background-color: #EEC5C5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.logikast {
+    width: 60%;
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+    padding-top: 10em;
+    align-items: center;
+}
+
+.inputboxss {
+    background-color: ghostwhite;
+    border-radius: 20px;
+    width: 25em;
+    height: 40px;
+}
+
+.logisisse {
+    background-color: #E7A0B7;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 18em;
+    height: 40px;
+    align-self: center;
+    font-size: 1.2em;
+}
+
+.tekstlogi {
+    display: flex;
+    justify-self: center;
+    font-size: 2em;
+}
+
+.kiisusiluett {
+    width: 100%;
+}
+
+.parool {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+}
+
+.epost {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+}
+
+.regatekst {
+    color: royalblue;
+    font-size: 1.4em;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-bottom: 4em;
+}
+
 h1 {
     border-bottom-style: solid;
     border-color: black;
@@ -118,7 +198,7 @@ body {
 }
 
 * {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 nav {
