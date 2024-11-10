@@ -20,6 +20,10 @@ def enda_konto():
 def sisselogimine():
     return render_template('sisselogimine.html')
 
+@app.route('/registreerimine')
+def registreerimine():
+    return render_template('registreerimine.html')
+
 
 if __name__ == '__main__':
     app.run()
