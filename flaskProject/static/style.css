@@ -367,3 +367,39 @@ section::after {
 .topnav a {
     float: left;
 }
+
+.postitus-box {
+    width: 80%;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: lavenderblush;
+    border: 2px solid rebeccapurple;
+    display: flex;
+    gap: 20px;
+}
+
+.postitus-text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.postitus-header {
+    margin-bottom: 10px;
+}
+
+.postitus-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.postitus-username {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.postitus-image-container img {
+    width: 100%;
+    height: auto;
+}
