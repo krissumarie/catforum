@@ -13,22 +13,18 @@ Logi sisse
         </div>
         <div class="logikast">
             <b class="tekstlogi">Loo uus kasutaja</b>
-            <div class="epost">
-                <b>E-posti aadress</b>
-                <input class="inputboxss">
-            </div>
-            <div class="parool">
-                <b>Parool</b>
-                <input class="inputboxss">
-            </div>
-            <div class="kordaparool">
-                <b>Korda parooli</b>
-                <input class="inputboxss">
-            </div>
-            <button class="lookasutaja">Loo kasutaja</button>
+        <form action="{{ url_for('signup') }}" method="POST" style="display:flex; flex-direction:column;">
+            <label class="logimistekst" for="name" id="name">kasutajanimi</label>
+            <input class="inputboxes" type="text" name="name" required>
+            <label class ="logimistekst" for="password" id="password">parool</label>
+            <input class="inputboxes" type="password" name="password" required>
+            <button class="logisisse">Registreeri</button>
+            </form>
             <div class="eisoovikasutajat">
             <b class="eisoovitekst">Ei soovi kasutajat?</b>
+                <a href="/">
             <b class="külalinelink"> Jätka külalisena</b>
+                </a>
             </div>
         </div>
     </div>

@@ -4,11 +4,16 @@ from flask import request
 from flaskProject.database.database import create_database
 from flask import session, flash
 from flask import Flask, redirect
+from flaskProject.database.user import create_user, check_user
 
-from flaskProject.database.user import create_user
 
+
+# muudatus
 app = Flask(__name__)
-
+app.config.from_object('flaskProject.config:Config')
+app.secret_key = 'your_secret_key'
+with app.app_context():
+    create_database()
 
 @app.route('/')
 def index():
@@ -22,17 +27,47 @@ def profiiliseaded():
 def enda_konto():
     return render_template('enda_konto.html')
 
-# app.config.from_object('config:Config')
-with app.app_context(): # must be in application context to execute
-    create_database()
-
-
 @app.route('/signup', methods=["POST"])
 def signup():
     name = request.form.get('name')
     password = request.form.get('password')
     create_user(name, password)
+    user_id = check_user(name, password)
+    if user_id:
+        session['user_id'] = user_id
+        session['username'] = name
+        flash("User created")
+        return redirect("/")
+    flash("Couldn't create user")
     return redirect("/")
+
+
+@app.route('/login', methods=["POST"])
+def login():
+    name = request.form.get('name')
+    password = request.form.get('password')
+    user_id = check_user(name, password)
+    if user_id:
+        session['user_id'] = user_id
+        session['username'] = name
+        flash("Login successful")
+        return redirect("/")
+    flash('Invalid credentials')
+    return redirect("/")
+
+
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    session.pop('username', None)
+    flash('Logged out')
+    return redirect("/")
+
+
+@app.route('/history')
+def history():
+    # Your code here
+    pass
 
 @app.route('/sisselogimine')
 def sisselogimine():
@@ -42,6 +77,8 @@ def sisselogimine():
 def registreerimine():
     return render_template('registreerimine.html')
 
+
+app.secret_key = 'your_secret_key'
 
 if __name__ == '__main__':
     app.run()
