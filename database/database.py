@@ -7,7 +7,7 @@ from flask import current_app
 def create_database():
     # load schema.sql file into variable
     schema: str
-    with open(os.path.join(os.path.abspath("."), "database", "schema.sql"), "r") as file:
+    with open(os.path.join(os.path.abspath("database"), "schema.sql"), "r") as file:
         schema = file.read()
 
     # Connect to an existing database
