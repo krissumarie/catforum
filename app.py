@@ -1,16 +1,14 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-from flaskProject.database.database import create_database
-from flask import session, flash
-from flask import Flask, redirect
-from flaskProject.database.user import create_user, check_user
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-
+from flask import Flask, render_template, request, session, flash, redirect
+from database.database import create_database
+from database.user import create_user, check_user
 
 # muudatus
 app = Flask(__name__)
-app.config.from_object('flaskProject.config:Config')
+app.config.from_object('config:Config')
 app.secret_key = 'your_secret_key'
 with app.app_context():
     create_database()
