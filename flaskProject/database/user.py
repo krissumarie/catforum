@@ -3,7 +3,7 @@ from flask import current_app
 
 
 def create_user(name: str, password: str):
-    with psycopg.connect("host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres") as conn:
+    with psycopg.connect(current_app.config["POSTGRES_CONNECTION_STRING"]) as conn:
         with conn.cursor() as cur:
             cur.execute(
                 "INSERT INTO users (name, password) VALUES (%s, %s)",
@@ -13,7 +13,7 @@ def create_user(name: str, password: str):
 
 
 def check_user(name: str, password: str):
-    with psycopg.connect("host=localhost user=postgres password=postgre port=5432 dbname=postgres") as conn:
+    with psycopg.connect(current_app.config["POSTGRES_CONNECTION_STRING"]) as conn:
         with conn.cursor() as cur:
             cur.execute(
                 "SELECT id, password FROM users WHERE name = %s",

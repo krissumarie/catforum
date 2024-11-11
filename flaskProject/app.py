@@ -10,6 +10,7 @@ from flaskProject.database.user import create_user, check_user
 
 # muudatus
 app = Flask(__name__)
+app.config.from_object('flaskProject.config:Config')
 app.secret_key = 'your_secret_key'
 with app.app_context():
     create_database()

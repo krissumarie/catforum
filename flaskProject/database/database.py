@@ -11,7 +11,7 @@ def create_database():
         schema = file.read()
 
     # Connect to an existing database
-    with psycopg.connect("host=localhost user=postgres password=postgre port=5432 dbname=postgres") as conn:
+    with psycopg.connect(current_app.config["POSTGRES_CONNECTION_STRING"]) as conn:
         # Open a cursor to perform database operations
         with conn.cursor() as cur:
             # Execute the schema script to initialize the database
