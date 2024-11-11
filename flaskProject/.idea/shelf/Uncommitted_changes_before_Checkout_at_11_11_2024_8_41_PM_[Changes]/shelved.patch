@@ -1,0 +1,15 @@
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>blinker==1.8.2\r\nclick==8.1.7\r\ncolorama==0.4.6\r\nFlask==3.0.3\r\nitsdangerous==2.2.0\r\nJinja2==3.1.4\r\nMarkupSafe==3.0.2\r\npsycopg==3.2.3\r\npsycopg-binary==3.2.3\r\ntyping_extensions==4.12.2\r\ntzdata==2024.2\r\nWerkzeug==3.1.2\r\n
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+--- a/requirements.txt	(revision 0e593b46ba452056e56fe87265aa3ec40e4dfe34)
++++ b/requirements.txt	(date 1731346800661)
+@@ -9,4 +9,4 @@
+ psycopg-binary==3.2.3
+ typing_extensions==4.12.2
+ tzdata==2024.2
+-Werkzeug==3.1.2
++Werkzeug==3.1.2
+\ No newline at end of file
