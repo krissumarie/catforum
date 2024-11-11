@@ -75,6 +75,10 @@ def sisselogimine():
 def registreerimine():
     return render_template('registreerimine.html')
 
+@app.route('/postitus')
+def postitus():
+    return render_template('postitus.html')
+
 
 app.secret_key = 'your_secret_key'
 

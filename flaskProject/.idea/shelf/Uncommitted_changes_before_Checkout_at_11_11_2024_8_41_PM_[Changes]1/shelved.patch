@@ -1,0 +1,122 @@
+Index: templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html' %}\r\n\r\n{% block title %}\r\nAvaleht\r\n{% endblock %}\r\n{% block content %}\r\n<h1>Kassisõprade foorum</h1>\r\n    <body>\r\n        <section>\r\n            <nav>\r\n                <div class=\"search-container\">\r\n                    <form action=\"/search\" method=\"get\">\r\n                    <input type=\"text\" placeholder=\"Otsi...\" name=\"query\">\r\n                    <button type=\"submit\">Otsi</button>\r\n                    </form>\r\n                </div>\r\n                <ul>\r\n                    <li><a href=\"#\">Postituse pealkiri</a></li>\r\n                    <li><img src=\"{{ url_for('static', filename='ksss.jpg') }}\" /></li>\r\n                    <li><a href=\"#\">Postituse pealkiri</a></li>\r\n                    <li><img src=\"{{ url_for('static', filename='gato.jpg') }}\" /></li>\r\n                    <li><a href=\"#\">Postituse pealkiri</a></li>\r\n                    <li><img src=\"{{ url_for('static', filename='mqdefault.jpg') }}\" /></li>\r\n                </ul>\r\n            </nav>\r\n        </section>\r\n    </body>\r\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/index.html b/templates/index.html
+--- a/templates/index.html	(revision 0e593b46ba452056e56fe87265aa3ec40e4dfe34)
++++ b/templates/index.html	(date 1731346765104)
+@@ -3,9 +3,10 @@
+ {% block title %}
+ Avaleht
+ {% endblock %}
++
+ {% block content %}
+-<h1>Kassisõprade foorum</h1>
+     <body>
++    <h1>Kassisõprade foorum</h1>
+         <section>
+             <nav>
+                 <div class="search-container">
+Index: database/database.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import os.path\r\n\r\nimport psycopg\r\nfrom flask import current_app\r\n\r\n\r\ndef create_database():\r\n    # load schema.sql file into variable\r\n    schema: str\r\n    with open(os.path.join(os.path.abspath(\".\"), \"database\", \"schema.sql\"), \"r\") as file:\r\n        schema = file.read()\r\n\r\n    # Connect to an existing database\r\n    with psycopg.connect(\"host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres\") as conn:\r\n        # Open a cursor to perform database operations\r\n        with conn.cursor() as cur:\r\n            # Execute the schema script to initialize the database\r\n            cur.execute(schema)\r\n            # Commit the changes to the database\r\n            # When this is not called, no changes will be made to database.\r\n            conn.commit()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/database/database.py b/database/database.py
+--- a/database/database.py	(revision 0e593b46ba452056e56fe87265aa3ec40e4dfe34)
++++ b/database/database.py	(date 1731347062960)
+@@ -11,7 +11,7 @@
+         schema = file.read()
+ 
+     # Connect to an existing database
+-    with psycopg.connect("host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres") as conn:
++    with psycopg.connect("host=localhost user=postgres password=postgre port=5432 dbname=postgres") as conn:
+         # Open a cursor to perform database operations
+         with conn.cursor() as cur:
+             # Execute the schema script to initialize the database
+Index: database/user.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import psycopg\r\nfrom flask import current_app\r\n\r\n\r\ndef create_user(name: str, password: str):\r\n    with psycopg.connect(\"host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres\") as conn:\r\n        with conn.cursor() as cur:\r\n            cur.execute(\r\n                \"INSERT INTO users (name, password) VALUES (%s, %s)\",\r\n                (name, password)\r\n            )\r\n            conn.commit()\r\n\r\n\r\ndef check_user(name: str, password: str):\r\n    with psycopg.connect(\"host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres\") as conn:\r\n        with conn.cursor() as cur:\r\n            cur.execute(\r\n                \"SELECT id, password FROM users WHERE name = %s\",\r\n                (name,)\r\n            )\r\n            user_data = cur.fetchone()\r\n            if user_data and password == user_data[1]:\r\n                return user_data[0]\r\n            return None\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/database/user.py b/database/user.py
+--- a/database/user.py	(revision 0e593b46ba452056e56fe87265aa3ec40e4dfe34)
++++ b/database/user.py	(date 1731347062969)
+@@ -3,7 +3,7 @@
+ 
+ 
+ def create_user(name: str, password: str):
+-    with psycopg.connect("host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres") as conn:
++    with psycopg.connect("host=localhost user=postgres password=postgre port=5432 dbname=postgres") as conn:
+         with conn.cursor() as cur:
+             cur.execute(
+                 "INSERT INTO users (name, password) VALUES (%s, %s)",
+@@ -13,7 +13,7 @@
+ 
+ 
+ def check_user(name: str, password: str):
+-    with psycopg.connect("host=localhost user=postgres password=Prktsql1. port=5432 dbname=postgres") as conn:
++    with psycopg.connect("host=localhost user=postgres password=postgre port=5432 dbname=postgres") as conn:
+         with conn.cursor() as cur:
+             cur.execute(
+                 "SELECT id, password FROM users WHERE name = %s",
+Index: static/test.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/static/test.js b/static/test.js
+new file mode 100644
+--- /dev/null	(date 1731346800645)
++++ b/static/test.js	(date 1731346800645)
+@@ -0,0 +1,10 @@
++<div id="result"></div>
++<script>
++n=100000000;
++i=0
++sum=0;
++start = Date.now();
++for(i=0; i<=n; i=i+1) sum = sum + i;
++millis = Date.now() - start;
++document.getElementById("result").innerHTML="Summa on "+sum+" millisekundid on "+millis;
++</script>
+\ No newline at end of file
+Index: templates/postitus.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/postitus.html b/templates/postitus.html
+new file mode 100644
+--- /dev/null	(date 1731346800653)
++++ b/templates/postitus.html	(date 1731346800653)
+@@ -0,0 +1,21 @@
++{% extends 'base.html' %}
++
++{% block title %}
++Avaleht
++{% endblock %}
++
++{% block content %}
++<h1>Postituse pealkiri</h1>
++    <body>
++        <section>
++            <nav>
++
++                    <ul>
++                        <li><div class="picture-container"><img src="{{ url_for('static', filename='ksss.jpg') }}" alt=""/></div></li>
++                        <li><div class="text-container"><a>Postituse tekst</a></li>
++                    </ul>
++
++            </nav>
++        </section>
++    </body>
++{% endblock %}
+\ No newline at end of file
