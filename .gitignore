@@ -1,3 +1,9 @@
+.idea
+__pycache__
+.venv
+venv
+config.py
+
 # Default ignored files
 /shelf/
 /workspace.xml
