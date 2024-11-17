@@ -2,6 +2,7 @@
 __pycache__
 .venv
 venv
+config.py
 
 # Default ignored files
 /shelf/
