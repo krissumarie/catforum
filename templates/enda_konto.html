@@ -2,7 +2,11 @@
 {% block title %}
 enda_konto
 {% endblock %}
-
+{% if session.get('username') %}
+    <p>Welcome, {{ session['username'] }}!</p>
+{% else %}
+    <p>You are not logged in!</p>
+{% endif %}
 {% block content %}
 <body>
   <div class="heading-enda-konto"><h1>Kassiemme60</h1></div>

@@ -14,22 +14,20 @@ Logi sisse
         <div class="logikast">
             <b class="tekstlogi">Logi sisse</b>
             <form action="{{ url_for('login') }}" method="POST" style="display:flex; flex-direction:column;">
-            <label class="logimistekst" for="name" id="login-name">kasutajanimi</label>
-            <input class="inputboxes" type="text" name="name" id="name" required>
+                <label class="logimistekst" for="name" id="login-name">kasutajanimi</label>
+                <input class="inputboxes" type="text" name="name" id="name" required>
 
-            <label class ="logimistekst" for="password" id="login-password">parool</label>
-            <input class="inputboxes" type="password" name="password" id="password" required>
-            <button class="logisisse">Logi sisse</button>
+                <label class="logimistekst" for="password" id="login-password">parool</label>
+                <input class="inputboxes" type="password" name="password" id="password" required>
+
+                <button class="logisisse">Logi sisse</button>
             </form>
             <b>-------- või --------</b>
             <a href="/registreerimine">
-            <b class="regatekst">Registreeri kasutajaks</b>
+                <b class="regatekst">Registreeri kasutajaks</b>
             </a>
-
         </div>
     </div>
 </div>
-
 </body>
-
 {% endblock %}
