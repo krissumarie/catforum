@@ -437,21 +437,68 @@ section::after {
     color: deeppink;
     font-size: 1em;
     padding-bottom: 3em;
+    }
+
+    .endakontobox2 {
+    background-color: lavenderblush;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70em;
 }
+
 }
+
+.endakontocontainer {
+    display: flex;
+    justify-self: center;
+    width: 97%;
+    margin: 2em;
+}
+
+.endakontobox2 {
+    background-color: lavenderblush;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.endakontobox1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-right: 1em;
+}
+
+.aikass {
+    width: 100%;
+}
+
+.endakontoboxideasetus {
+    display: flex;
+    justify-content: space-around;
+}
+
 .heading-enda-konto {
-     top: 11%;
-     left: 27%;
+    font-size: 2em;
+    padding: 1em;
 }
  .image-with-text-enda-konto {
      display: flex;
-     align-items: center;
-     height: 300px;
+     height: 30em;
      background-color: lavenderblush;;
-     width: 1260px;
-     top: 20%;
-     left: 1%;
+     width: 100%;
 }
+
+ .endakontotext {
+     width: 100%;
+     box-sizing: border-box;
+     max-width: 100%;
+     padding: 2em;
+     font-size: 1em;
+     margin-bottom: 20px;
+     line-height: 2;
+ }
  .image-with-text img {
      margin-right: 10px;
     /* adjust as needed */
@@ -475,12 +522,10 @@ section::after {
      cursor: pointer;
 }
  .second-textbox-enda-konto {
-     padding-left: 20px;
-     width: 200px;
-     height: 300px;
+     width: 90%;
+     height: 12em;
      background-color: lavenderblush;
-     top: 69%;
-     left: 1%
+     padding-left: 1em;
 }
 .topnav-right {
     float: right;
