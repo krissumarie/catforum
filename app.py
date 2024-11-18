@@ -10,6 +10,7 @@ from database.user import create_user, check_user
 app = Flask(__name__)
 app.config.from_object('config.Config')
 app.secret_key = 'your_secret_key'
+app.config['SECRET_KEY'] = 'your_secret_key'
 with app.app_context():
     create_database()
 
@@ -20,7 +21,7 @@ def get_db_connection():
 @app.route('/')
 def index():
     if 'username' in session:
-        return render_template('enda_konto.html', username=session['username'])
+        return render_template('index.html', username=session['username'])
     return render_template('index.html')
 
 
