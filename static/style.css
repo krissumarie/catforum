@@ -91,10 +91,6 @@
     font-size: 1.2em;
 }
 
-.container .box .salvestabutton .salvesta {
-    text-align: center;
-}
-
 .closebutton {
     border: none;
     background: transparent;
@@ -134,6 +130,7 @@
     flex-direction: column;
     padding-top: 5em;
     align-items: center;
+    padding-bottom: 5em;
 }
 
 .inputboxes {
@@ -317,6 +314,130 @@ section::after {
         color: white;
         font-size: 1.5em;
     }
+
+    .kass_ja_logikast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .kassp {
+        background-color: #EEC5C5;
+        padding-right: 30%;
+        padding-left: 30%;
+    }
+
+    .inputboxes {
+    background-color: ghostwhite;
+    border-radius: 20px;
+    width: 20em;
+    height: 2.2em;
+    margin: 20px;
+    align-self: center;
+    }
+
+    .logisisse {
+    background-color: rgba(236,208,216,0.6);
+    border-color: #333333;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 14em;
+    height: 40px;
+    align-self: center;
+    font-size: 1.2em;
+    margin: 15px;
+    }
+
+    .regatekst {
+    color: royalblue;
+    font-size: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-bottom: 4em;
+    }
+
+    .eisoovitekst {
+    font-size: 1em;
+    }
+
+    .külalinelink {
+    color: royalblue;
+    font-size: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-bottom: 0.1em;
+    }
+
+    .tekstlogi {
+    display: flex;
+    justify-self: center;
+    font-size: 1.25em;
+    }
+
+    .container {
+    justify-self: center;
+    background-color: lavenderblush;
+    width: 100%;
+    }
+
+    .boxidasetus {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4em;
+    }
+
+    .box {
+    margin: 2em;
+    display: flex;
+    gap: 4em;
+    flex-direction: column;
+    justify-items: center;
+    padding-bottom: 2em;
+    padding-left: 23%;
+    }
+
+    .change-pfp-btn {
+    background-color: #E7A0B7;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 9em;
+    height: 40px;
+    transform: scale(1.05);
+    align-self: center;
+    font-size: 1em;
+    }
+
+    .accountname {
+    height: 2em;
+    color: deeppink;
+    font-size: 1em;
+    }
+
+    .faktibox {
+    height: 6em;
+    color: deeppink;
+    font-size: 1em;
+    }
+
+    .box2 {
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+    margin: 2em;
+    justify-content: center;
+    padding-left: 13%;
+    }
+
+    .biobox {
+    height: 10em;
+    color: deeppink;
+    font-size: 1em;
+    padding-bottom: 3em;
+}
 }
 .heading-enda-konto {
      top: 11%;
