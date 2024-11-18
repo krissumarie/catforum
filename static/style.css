@@ -270,21 +270,20 @@ section::after {
     clear: both;
 }
 
-/* navbari stiil */
-        /* Add a black background color to the top navigation */
+/* navbar style */
 .navbar {
     background-color: darkgrey;
     overflow: hidden;
     width: 100%;
     height: 2%;
 }
-/* Default: Show nav-links and hide the menu toggle on desktop */
+
 .navbar .nav-links {
     list-style-type: none;
     display: flex;
     gap: 15px;
 }
-    /* Style the links inside the navigation bar */
+
 .navbar a {
     float: left;
     color: #f2f2f2;
@@ -295,211 +294,22 @@ section::after {
     justify-content: center;
 }
 
-    /* Change the color of links on hover */
 .navbar a:hover {
     background-color: #ddd;
     color: lightpink;
 }
 
-    /* Add a color to the active/current link */
 .navbar a.active {
     background-color: lightpink;
     color: rebeccapurple;
 }
 .navbar .menu-toggle {
-    display: none; /* Hide by default (desktop) */
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .navbar .nav-links {
-        display: none; /* Hide by default on mobile */
-        flex-direction: column;
-        background-color: #333;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-    }
-
-    .navbar .nav-links.visible {
-        display: flex; /* Show when the 'visible' class is added */
-    }
-
-    .navbar .menu-toggle {
-        display: block; /* Show only on mobile */
-        cursor: pointer;
-        color: white;
-        font-size: 1.5em;
-    }
-
-    .kass_ja_logikast {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-
-    .kassp {
-        background-color: #EEC5C5;
-        padding-right: 30%;
-        padding-left: 30%;
-    }
-
-    .inputboxes {
-    background-color: ghostwhite;
-    border-radius: 20px;
-    width: 20em;
-    height: 2.2em;
-    margin: 20px;
-    align-self: center;
-    }
-
-    .logisisse {
-    background-color: rgba(236,208,216,0.6);
-    border-color: #333333;
-    border-radius: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    width: 14em;
-    height: 40px;
-    align-self: center;
-    font-size: 1.2em;
-    margin: 15px;
-    }
-
-    .regatekst {
-    color: royalblue;
-    font-size: 1em;
-    text-decoration: underline;
-    cursor: pointer;
-    padding-bottom: 4em;
-    }
-
-    .eisoovitekst {
-    font-size: 1em;
-    }
-
-    .külalinelink {
-    color: royalblue;
-    font-size: 1em;
-    text-decoration: underline;
-    cursor: pointer;
-    padding-bottom: 0.1em;
-    }
-
-    .tekstlogi {
-    display: flex;
-    justify-self: center;
-    font-size: 1.25em;
-    }
-
-    .container {
-    justify-self: center;
-    background-color: lavenderblush;
-    width: 100%;
-    }
-
-    .boxidasetus {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 4em;
-    }
-
-    .box {
-    margin: 2em;
-    display: flex;
-    gap: 4em;
-    flex-direction: column;
-    justify-items: center;
-    padding-bottom: 2em;
-    padding-left: 23%;
-    }
-
-    .change-pfp-btn {
-    background-color: #E7A0B7;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    width: 9em;
-    height: 40px;
-    transform: scale(1.05);
-    align-self: center;
-    font-size: 1em;
-    }
-
-    .accountname {
-    height: 2em;
-    color: deeppink;
-    font-size: 1em;
-    }
-
-    .faktibox {
-    height: 6em;
-    color: deeppink;
-    font-size: 1em;
-    }
-
-    .box2 {
-    display: flex;
-    gap: 3em;
-    flex-direction: column;
-    margin: 2em;
-    justify-content: center;
-    padding-left: 13%;
-    }
-
-    .biobox {
-    height: 10em;
-    color: deeppink;
-    font-size: 1em;
-    padding-bottom: 3em;
-    }
-
-    .endakontobox2 {
-    background-color: lavenderblush;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 70em;
-}
-
-}
-
-.endakontocontainer {
-    display: flex;
-    justify-self: center;
-    width: 97%;
-    margin: 2em;
-}
-
-.endakontobox2 {
-    background-color: lavenderblush;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
-
-.endakontobox1 {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding-right: 1em;
-}
-
-.aikass {
-    width: 100%;
-}
-
-.endakontoboxideasetus {
-    display: flex;
-    justify-content: space-around;
+    display: none;
 }
 
 .heading-enda-konto {
-    font-size: 2em;
-    padding: 1em;
+     top: 11%;
+     left: 27%;
 }
  .image-with-text-enda-konto {
      display: flex;
@@ -508,19 +318,6 @@ section::after {
      width: 100%;
 }
 
- .endakontotext {
-     width: 100%;
-     box-sizing: border-box;
-     max-width: 100%;
-     padding: 2em;
-     font-size: 1em;
-     margin-bottom: 20px;
-     line-height: 2;
- }
- .image-with-text img {
-     margin-right: 10px;
-    /* adjust as needed */
-}
  .my-button-enda-konto {
      background-color: gray;
      color: white;
@@ -548,10 +345,12 @@ section::after {
      cursor: pointer;
 }
  .second-textbox-enda-konto {
-     width: 90%;
-     height: 12em;
+     padding-left: 20px;
+     width: 200px;
+     height: 300px;
      background-color: lavenderblush;
-     padding-left: 1em;
+     top: 69%;
+     left: 1%
 }
 .topnav-right {
     float: right;
@@ -638,11 +437,11 @@ section::after {
 }
 
 .avaleht-posts img {
-    width: 100%;
+    width: 95%;
     height: auto;
     object-fit: contain;
     max-height: 200px;
-    margin-bottom: 10px;
+    margin: 10px;
 
 }
 
@@ -682,4 +481,395 @@ section::after {
 
 .search-button:hover {
   background-color: lavenderblush;
+}
+
+.endakontocontainer {
+    display: flex;
+    justify-self: center;
+    width: 97%;
+    margin: 2em;
+}
+
+.endakontobox2 {
+    background-color: lavenderblush;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.endakontobox1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-right: 1em;
+}
+
+.aikass {
+    width: 100%;
+}
+
+.endakontoboxideasetus {
+    display: flex;
+    justify-content: space-around;
+}
+
+.heading-enda-konto {
+    font-size: 2em;
+    padding: 1em;
+}
+
+.image-with-text-enda-konto {
+    display: flex;
+    height: 30em;
+    background-color: lavenderblush;;
+    width: 100%;
+}
+
+.endakontotext {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 2em;
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 2;
+}
+
+.image-with-text img {
+    margin-right: 10px;
+    /* adjust as needed */
+}
+
+.my-button-enda-konto {
+    background-color: gray;
+    color: white;
+    margin: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.my-button-enda-konto:hover {
+    background-color: rgba(255, 0, 23, 0.6)
+}
+
+.my-button-enda-konto:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.second-button-enda-konto {
+    background-color: gray;
+    color: white;
+    margin: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.second-textbox-enda-konto {
+    width: 90%;
+    height: 12em;
+    background-color: lavenderblush;
+    padding-left: 1em;
+}
+
+.topnav-right {
+    float: right;
+    padding-left: 400px;
+}
+
+.topnav a {
+    float: left;
+}
+
+.postitus-box {
+    width: 80%;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: lavenderblush;
+    border: 2px solid rebeccapurple;
+    display: flex;
+    gap: 20px;
+}
+
+.postitus-text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.postitus-header {
+    margin-bottom: 10px;
+}
+
+.postitus-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.postitus-username {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.postitus-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .navbar .nav-links.visible {
+        display: flex;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5em;
+    }
+
+    .kass_ja_logikast {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kassp {
+        background-color: #EEC5C5;
+        padding-right: 30%;
+        padding-left: 30%;
+    }
+
+    .inputboxes {
+        background-color: ghostwhite;
+        border-radius: 20px;
+        width: 20em;
+        height: 2.2em;
+        margin: 20px;
+        align-self: center;
+    }
+
+    .logisisse {
+        background-color: rgba(236, 208, 216, 0.6);
+        border-color: #333333;
+        border-radius: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        width: 14em;
+        height: 40px;
+        align-self: center;
+        font-size: 1.2em;
+        margin: 15px;
+    }
+
+    .regatekst {
+        color: royalblue;
+        font-size: 1em;
+        text-decoration: underline;
+        cursor: pointer;
+        padding-bottom: 4em;
+    }
+
+    .eisoovitekst {
+        font-size: 1em;
+    }
+
+    .külalinelink {
+        color: royalblue;
+        font-size: 1em;
+        text-decoration: underline;
+        cursor: pointer;
+        padding-bottom: 0.1em;
+    }
+
+    .tekstlogi {
+        display: flex;
+        justify-self: center;
+        font-size: 1.25em;
+    }
+
+    .container {
+        justify-self: center;
+        background-color: lavenderblush;
+        width: 100%;
+    }
+
+    .boxidasetus {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4em;
+    }
+
+    .box {
+        margin: 2em;
+        display: flex;
+        gap: 4em;
+        flex-direction: column;
+        justify-items: center;
+        padding-bottom: 2em;
+        padding-left: 23%;
+    }
+
+    .change-pfp-btn {
+        background-color: #E7A0B7;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        width: 9em;
+        height: 40px;
+        transform: scale(1.05);
+        align-self: center;
+        font-size: 1em;
+    }
+
+    .accountname {
+        height: 2em;
+        color: deeppink;
+        font-size: 1em;
+    }
+
+    .faktibox {
+        height: 6em;
+        color: deeppink;
+        font-size: 1em;
+    }
+
+    .box2 {
+        display: flex;
+        gap: 3em;
+        flex-direction: column;
+        margin: 2em;
+        justify-content: center;
+        padding-left: 13%;
+    }
+
+    .biobox {
+        height: 10em;
+        color: deeppink;
+        font-size: 1em;
+        padding-bottom: 3em;
+    }
+
+    .endakontobox2 {
+        background-color: lavenderblush;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 70em;
+    }
+
+    .endakontotext {
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 2em;
+        font-size: 1em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        line-height: 2;
+    }
+
+    .h1 {
+        padding: 5px;
+        margin: 1px;
+    }
+
+    .avaleht-posts li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: lavenderblush;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .avaleht-posts a {
+        margin-top: 5px;
+        margin-bottom: 1px;
+        font-size: 10px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .avaleht-posts img {
+        width: 90%;
+        height: auto;
+        object-fit: contain;
+        max-height: 200px;
+    }
+
+    .search-box {
+        width: 30%;
+        padding: 5px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 9px;
+        outline: none;
+        background-color: #fff;
+        color: #333;
+        transition: border-color 0.3s ease;
+    }
+
+    .search-box:focus {
+        border-color: lavenderblush;
+    }
+
+    .search-button {
+        padding: 5px 10px;
+        border: none;
+        background-color: lavenderblush;
+        color: black;
+        font-size: 9px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .postitus-box {
+        width: 90%;
+        padding: 15px;
+        margin: 20px auto;
+        flex-direction: column;
+    }
+
+    .postitus-text-container {
+        flex: none;
+        margin-bottom: 15px;
+    }
+
+    .postitus-title {
+        font-size: 16px;
+    }
+
+    .postitus-username {
+        font-size: 12px;
+    }
+
+    .postitus-box img {
+        width: 100%;
+        height: auto;
+    }
+
 }
