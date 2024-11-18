@@ -313,17 +313,11 @@ section::after {
 }
  .image-with-text-enda-konto {
      display: flex;
-     align-items: center;
-     height: 300px;
+     height: 30em;
      background-color: lavenderblush;;
-     width: 1260px;
-     top: 20%;
-     left: 1%;
-     margin-bottom: 20px;
+     width: 100%;
 }
- .image-with-text img {
-     margin-right: 10px;
-}
+
  .my-button-enda-konto {
      background-color: gray;
      color: white;
@@ -489,6 +483,145 @@ section::after {
   background-color: lavenderblush;
 }
 
+.endakontocontainer {
+    display: flex;
+    justify-self: center;
+    width: 97%;
+    margin: 2em;
+}
+
+.endakontobox2 {
+    background-color: lavenderblush;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.endakontobox1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-right: 1em;
+}
+
+.aikass {
+    width: 100%;
+}
+
+.endakontoboxideasetus {
+    display: flex;
+    justify-content: space-around;
+}
+
+.heading-enda-konto {
+    font-size: 2em;
+    padding: 1em;
+}
+
+.image-with-text-enda-konto {
+    display: flex;
+    height: 30em;
+    background-color: lavenderblush;;
+    width: 100%;
+}
+
+.endakontotext {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 2em;
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 2;
+}
+
+.image-with-text img {
+    margin-right: 10px;
+    /* adjust as needed */
+}
+
+.my-button-enda-konto {
+    background-color: gray;
+    color: white;
+    margin: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.my-button-enda-konto:hover {
+    background-color: rgba(255, 0, 23, 0.6)
+}
+
+.my-button-enda-konto:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.second-button-enda-konto {
+    background-color: gray;
+    color: white;
+    margin: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.second-textbox-enda-konto {
+    width: 90%;
+    height: 12em;
+    background-color: lavenderblush;
+    padding-left: 1em;
+}
+
+.topnav-right {
+    float: right;
+    padding-left: 400px;
+}
+
+.topnav a {
+    float: left;
+}
+
+.postitus-box {
+    width: 80%;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: lavenderblush;
+    border: 2px solid rebeccapurple;
+    display: flex;
+    gap: 20px;
+}
+
+.postitus-text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.postitus-header {
+    margin-bottom: 10px;
+}
+
+.postitus-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.postitus-username {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.postitus-image-container img {
+    width: 100%;
+    height: auto;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .navbar .nav-links {
@@ -630,21 +763,32 @@ section::after {
     }
 
     .biobox {
-    height: 10em;
-    color: deeppink;
-    font-size: 1em;
-    padding-bottom: 3em;
+        height: 10em;
+        color: deeppink;
+        font-size: 1em;
+        padding-bottom: 3em;
     }
 
     .endakontobox2 {
-    background-color: lavenderblush;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 70em;
-}
+        background-color: lavenderblush;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 70em;
+    }
 
-    .h1{
+    .endakontotext {
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 2em;
+        font-size: 1em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        line-height: 2;
+    }
+
+    .h1 {
         padding: 5px;
         margin: 1px;
     }
@@ -729,134 +873,3 @@ section::after {
     }
 
 }
-
-.endakontocontainer {
-    display: flex;
-    justify-self: center;
-    width: 97%;
-    margin: 2em;
-}
-
-.endakontobox2 {
-    background-color: lavenderblush;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
-
-.endakontobox1 {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding-right: 1em;
-}
-
-.aikass {
-    width: 100%;
-}
-
-.endakontoboxideasetus {
-    display: flex;
-    justify-content: space-around;
-}
-
-.heading-enda-konto {
-    font-size: 2em;
-    padding: 1em;
-}
- .image-with-text-enda-konto {
-     display: flex;
-     height: 30em;
-     background-color: lavenderblush;;
-     width: 100%;
-}
-
- .endakontotext {
-     width: 100%;
-     box-sizing: border-box;
-     max-width: 100%;
-     padding: 2em;
-     font-size: 1em;
-     margin-bottom: 20px;
-     line-height: 2;
- }
- .image-with-text img {
-     margin-right: 10px;
-    /* adjust as needed */
-}
- .my-button-enda-konto {
-     background-color: gray;
-     color: white;
-     margin: 20px;
-     padding: 10px 20px;
-     border: none;
-     border-radius: 40px;
-     cursor: pointer;
-     text-decoration: none;
-}
-.my-button-enda-konto:hover {background-color: rgba(255,0,23,0.6)
-}
-
-.my-button-enda-konto:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
- .second-button-enda-konto {
-     background-color: gray;
-     color: white;
-     margin: 20px;
-     padding: 10px 20px;
-     border: none;
-     border-radius: 20px;
-     cursor: pointer;
-}
- .second-textbox-enda-konto {
-     width: 90%;
-     height: 12em;
-     background-color: lavenderblush;
-     padding-left: 1em;
-}
-.topnav-right {
-    float: right;
-    padding-left: 400px;
-}
-.topnav a {
-    float: left;
-}
-
-.postitus-box {
-    width: 80%;
-    padding: 20px;
-    margin: 50px auto;
-    background-color: lavenderblush;
-    border: 2px solid rebeccapurple;
-    display: flex;
-    gap: 20px;
-}
-
-.postitus-text-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.postitus-header {
-    margin-bottom: 10px;
-}
-
-.postitus-title {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.postitus-username {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 5px;
-}
-
-.postitus-image-container img {
-    width: 100%;
-    height: auto;
-}
-
