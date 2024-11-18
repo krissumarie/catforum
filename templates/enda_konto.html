@@ -9,20 +9,27 @@ enda_konto
 {% endif %}
 {% block content %}
 <body>
-  <div class="heading-enda-konto"><h1>Kassiemme60</h1></div>
-  <div class="image-with-text-enda-konto">
-    <img src="https://miro.medium.com/v2/resize:fit:1200/1*ReCVqD3PcPVJg987DXmLDw.jpeg" style="padding: 20px" width="300" height="300">
-    <p>Tere, kassiinimesed! 😺
-Olen 60-aastane suur kassisõber, kes jagab oma kodu ja südant 7 imelise kassiga. Nende nimed on Triibu, Miisu, Kohvikoor, Fanta, Albert, Mjäu ja Krõps 💖. Elu nende väikeste karvaste tegelastega on täis rõõmu, seiklusi ja vahel ka väikest pahandust. Kassid on olnud minu truud kaaslased juba aastaid ning nendega koos on iga päev omaette kingitus.
-Kui mul ei ole parajasti käed täis kasside paitamist või nendele maiuste jagamist, siis armastan lugeda, aiatööd teha ja kuulata looduse hääli. Naudin ka rahulikku olemist koos oma kiisude seltsis – nemad teavad täpselt, kuidas maailma stressid unustada.
-Siit foorumist loodan leida mõttekaaslasi, kellega jagada kasside rõõme ja muresid. Ootan huviga teie lugusid ja kogemusi, sest kassiomanikuks olemine on alati midagi, millest õppida. 💬
-Kassijuttu ikka jätkub, nii et võtke julgesti ühendust! 😊</p>
+<div class="endakontocontainer">
+    <div class="endakontoboxideasetus">
+        <div class="endakontobox1">
+            <img class="aikass" src="https://miro.medium.com/v2/resize:fit:1200/1*ReCVqD3PcPVJg987DXmLDw.jpeg">
+            <a href="{{ url_for('profiiliseaded') }}" class="my-button-enda-konto">Muuda profiili</a>
+            <div class="second-textbox-enda-konto">
+              <p>-60</p>
+              <p>-Kassid💖</p>
+              <p>-Lapselapsed💖</p>
+            </div>
+        </div>
+        <div class="endakontobox2">
+            <div class="heading-enda-konto"><b>Kassiemme60</b></div>
+            <div class="image-with-text-enda-konto">
+            <p class="endakontotext">Tere, kassiinimesed! 😺
+        Olen 60-aastane suur kassisõber, kes jagab oma kodu ja südant 7 imelise kassiga. Nende nimed on Triibu, Miisu, Kohvikoor, Fanta, Albert, Mjäu ja Krõps 💖. Elu nende väikeste karvaste tegelastega on täis rõõmu, seiklusi ja vahel ka väikest pahandust. Kassid on olnud minu truud kaaslased juba aastaid ning nendega koos on iga päev omaette kingitus.
+        Kui mul ei ole parajasti käed täis kasside paitamist või nendele maiuste jagamist, siis armastan lugeda, aiatööd teha ja kuulata looduse hääli. Naudin ka rahulikku olemist koos oma kiisude seltsis – nemad teavad täpselt, kuidas maailma stressid unustada.
+        Siit foorumist loodan leida mõttekaaslasi, kellega jagada kasside rõõme ja muresid. Kassijuttu ikka jätkub, nii et võtke julgesti ühendust! 😊</p>
+            </div>
+        </div>
+    </div>
 </div>
-    <a href="{{ url_for('profiiliseaded') }}" class="my-button-enda-konto">Muuda profiili</a>
-<div class="second-textbox-enda-konto">
-  <p>-60</p>
-  <p>-Kassid💖</p>
-  <p>-Lapselapsed💖</p>
-  </div>
 </body>
 {% endblock %}
