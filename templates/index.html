@@ -4,25 +4,31 @@
 Avaleht
 {% endblock %}
 {% block content %}
-<h1>Kassisõprade foorum</h1>
     <body>
-        <section>
-            <nav>
-                <div class="search-container">
-                    <form action="/search" method="get">
-                    <input type="text" placeholder="Otsi..." name="query">
-                    <button type="submit">Otsi</button>
-                    </form>
-                </div>
-                <ul>
-                    <li><a href="#">Postituse pealkiri</a></li>
-                    <li><img src="{{ url_for('static', filename='ksss.jpg') }}" /></li>
-                    <li><a href="#">Postituse pealkiri</a></li>
-                    <li><img src="{{ url_for('static', filename='gato.jpg') }}" /></li>
-                    <li><a href="#">Postituse pealkiri</a></li>
-                    <li><img src="{{ url_for('static', filename='mqdefault.jpg') }}" /></li>
-                </ul>
-            </nav>
-        </section>
+    <h1>Kassisõprade foorum</h1>
+        <div class="avaleht-box">
+            <section>
+                <nav>
+                    <div class="search-container">
+                        <input type="text" class="search-box" placeholder="Otsi...">
+                        <button class="search-button">Otsi</button>
+                    </div>
+                    <ul class="avaleht-posts">
+                        <li>
+                            <a href="postitus">Postituse pealkiri</a>
+                            <img src="{{ url_for('static', filename='ksss.jpg') }}" alt="Image 1" />
+                        </li>
+                        <li>
+                            <a href="postitus">Postituse pealkiri</a>
+                            <img src="{{ url_for('static', filename='gato.jpg') }}" alt="Image 2" />
+                        </li>
+                        <li>
+                            <a href="postitus">Postituse pealkiri</a>
+                            <img src="{{ url_for('static', filename='mqdefault.jpg') }}" alt="Image 3" />
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
     </body>
 {% endblock %}
