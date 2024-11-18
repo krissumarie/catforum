@@ -52,6 +52,12 @@
     font-size: 1.2em;
 }
 
+.change-pfp-btn:hover {background-color: rgba(248,221,229,0.6)}
+
+.change-pfp-btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .inputbox {
     width: 100%;
     background-color: white;
@@ -89,6 +95,17 @@
     transform: scale(1.05);
     align-self: center;
     font-size: 1.2em;
+    text-decoration: None;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.salvestabutton:hover {background-color: rgba(248,221,229,0.6)}
+
+.salvestabutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .closebutton {
@@ -99,6 +116,13 @@
     cursor: pointer;
     display: flex;
     justify-self: flex-end;
+    text-decoration: None;
+    transition: background-color 1s ease, transform 1s ease;
+}
+.closebutton:hover {background-color: rgba(248,221,229,0.6)}
+
+.closebutton:active {
+  transform: translateY(4px);
 }
 
 .sisselogimiscontainer {
@@ -208,12 +232,6 @@
     text-decoration: underline;
     cursor: pointer;
     padding-bottom: 0.1em;
-}
-
-.kordaparool {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.1em;
 }
 
 h1 {
@@ -451,6 +469,7 @@ section::after {
      width: 1260px;
      top: 20%;
      left: 1%;
+     margin-bottom: 20px;
 }
  .image-with-text img {
      margin-right: 10px;
@@ -462,8 +481,16 @@ section::after {
      margin: 20px;
      padding: 10px 20px;
      border: none;
-     border-radius: 20px;
+     border-radius: 40px;
      cursor: pointer;
+     text-decoration: none;
+}
+.my-button-enda-konto:hover {background-color: rgba(255,0,23,0.6)
+}
+
+.my-button-enda-konto:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
  .second-button-enda-konto {
      background-color: gray;
