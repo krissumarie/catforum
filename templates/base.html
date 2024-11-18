@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    Kui lisasid normalize.css faili siis eemalda see kommentaarist
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
-    -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <!--navbar -->
-    <nav class = "navbar">
+    <!-- Navbar -->
+    <nav class="navbar">
         <div class="menu-toggle" onclick="toggleMenu()">☰menüü</div>
         <ul class="nav-links" id="nav-links">
-            <li><a href = "{{ url_for('index') }}">Index</a></li>
-            <li><a href="{{ url_for('profiiliseaded') }}">Profiiliseaded</a></li>
+            <li><a href="{{ url_for('index') }}">Index</a></li>
             <li><a href="{{ url_for('enda_konto') }}">Enda konto</a></li>
             <li><a href="{{ url_for('sisselogimine') }}">Sisselogimine</a></li>
             <li><a href="{{ url_for('registreerimine') }}">Registreerimine</a></li>
             <div class="topnav-right">
                 {% if session.get('username') %}
-                <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
+                    <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
                 {% endif %}
             </div>
         </ul>
     </nav>
 
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div>
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Content Block -->
     {% block content %}{% endblock %}
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
