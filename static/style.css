@@ -269,15 +269,27 @@
     cursor: pointer;
 }
 
-.postlootekst {
-    display: block; /* Ensures it starts on a new line */
-    width: 90%; /* Adjust width as needed (e.g., 90% of the container width) */
-    margin: 10px auto; /* Adds space above and centers it horizontally */
-    padding: 6em; /* Adds internal spacing */
-    font-size: 16px; /* Adjusts text size */
-    border: 1px solid #ccc; /* Adds a border */
-    border-radius: 5px; /* Optional: Rounds the corners */
+.pealkiritekst {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 1em;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
+}
+
+.postlootekst {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 1em;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 10em;
 }
 
 .image-upload {
