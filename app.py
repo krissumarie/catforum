@@ -4,10 +4,11 @@ sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 import psycopg
 from flask import Flask, render_template, request, session, flash, redirect
 from database.database import create_database
-from database.user import create_user, check_user
-# muudatus
+from werkzeug.utils import secure_filename
+from flask import send_from_directory
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_folder='static')
 app.config.from_object('config.Config')
 app.secret_key = 'your_secret_key'
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -115,10 +116,89 @@ def registreerimine():
 def postitus():
     return render_template('postitus.html')
 
-@app.route('/postituseloomine')
-def postituseloomine():
-    return render_template('postituseloomine.html')
+UPLOAD_FOLDER = 'uploads'  # Folder to store uploaded files
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
+
+# Ensure the uploads directory exists
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+def allowed_file(filename):
+    """Check if the file has an allowed extension."""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/create_post', methods=["GET", "POST"])
+def create_post():
+    # Check if the user is logged in
+    if 'username' not in session:
+        flash('You must be logged in to create a post.', 'danger')
+        return redirect('/sisselogimine')
+
+    if request.method == 'POST':
+        # Get data from the form
+        title = request.form.get('title')
+        text = request.form.get('text')
+        file = request.files.get('image')
+
+        # Validate form inputs
+        if not title or not text:
+            flash('Title and text are required.', 'danger')
+            return redirect('/create_post')
+
+        # Handle file upload
+        image_path = None
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            image_path = f"uploads/{filename}"  # Store the relative path
+
+        try:
+            # Save the post to the database
+            with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
+                with conn.cursor() as cur:
+                    cur.execute("""
+                        INSERT INTO posts (title, text, username, image_path)
+                        VALUES (%s, %s, %s, %s)
+                    """, (title, text, session['username'], image_path))
+                    conn.commit()
+                    flash('Post created successfully!', 'success')
+                    return redirect('/')  # Redirect to the home page after posting
+        except psycopg.Error as e:
+            flash(f'Error saving post to the database: {e}', 'danger')
+
+    # Render the post creation form
+    return render_template('create_post.html')
+
+
+
+@app.route('/uploads')
+def uploads():
+    posts = []
+    try:
+        with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    SELECT title, text, image_path, username FROM posts ORDER BY id DESC
+                """)
+                posts = cur.fetchall()
+                print(f"Posts fetched: {posts}")  # Debug print to check data
+    except psycopg.Error as e:
+        flash(f"Database error: {e}", 'danger')
+
+    # Normalize the image path to use forward slashes (ensure consistency)
+    posts = [{
+        'headline': post[0],
+        'text': post[1],
+        'image_path': post[2].replace('\\', '/'),  # Make sure to replace backslashes with forward slashes
+        'username': post[3]
+    } for post in posts]
+
+    return render_template('uploads.html', posts=posts)
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 app.secret_key = 'your_secret_key'
 
