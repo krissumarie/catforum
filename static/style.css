@@ -234,6 +234,87 @@
     padding-bottom: 0.1em;
 }
 
+.postloocontainer {
+    display: flex;
+    justify-self: center;
+    background-color: white;
+    width: 40em;
+    flex-direction: column;
+    margin-top: 4em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.postloonavb {
+    align-items: center;
+    display: flex;
+    height: 3em;
+    justify-content: center;
+    position: relative;
+}
+
+.navbtekst {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.closepostloo {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.pealkiritekst {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 1em;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.postlootekst {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 1em;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 10em;
+}
+
+.image-upload {
+    width: 6em;
+    margin-left: 32px;
+    border-color: #B8A3A3;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.postitabutton {
+    display: block; /* Ensures it appears on a new line */
+    width: 50%; /* Adjust width as needed */
+    margin: 10px auto; /* Centers the button horizontally and adds spacing */
+    padding: 0.5em; /* Adds internal spacing for a comfortable click area */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Makes the text stand out */
+    color: #fff; /* Button text color */
+    background-color: #B8A3A3; /* Button background color (blue) */
+    border: none; /* Removes the default border */
+    border-radius: 1em; /* Optional: Rounds the corners */
+    cursor: pointer;
+}
+
 h1 {
     border-bottom-style: none;
     border-color: black;
@@ -244,7 +325,7 @@ h1 {
 }
 
 body {
-    background-color: lightpink;
+    background-color: #EEC5C5;
 }
 
 * {
@@ -253,7 +334,7 @@ body {
 
 nav {
   height: 10%;
-  background: #E7A0B7;
+  background: #B8A3A3;
   padding: 20px;
     align-content: center;
 }
@@ -870,6 +951,10 @@ section::after {
     .postitus-box img {
         width: 100%;
         height: auto;
+    }
+
+    .postloocontainer{
+        width: 100%;
     }
 
 }

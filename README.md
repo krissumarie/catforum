@@ -11,6 +11,6 @@
 
 - venv/Scripts/activate
 
--pip install -r requirements.txt
+- pip install -r requirements.txt
 
 4. Lõpuks paned viimase commandi: flask --debug run ja siis peaks tulema link meie lehele.
