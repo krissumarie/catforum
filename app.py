@@ -116,6 +116,11 @@ def registreerimine():
 def postitus():
     return render_template('postitus.html')
 
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
 UPLOAD_FOLDER = 'uploads'  # Folder to store uploaded files
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}

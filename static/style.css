@@ -321,6 +321,49 @@
     cursor: pointer;
 }
 
+.aboutuscontainer {
+    display: flex;
+    justify-self: center;
+    margin-top: 2em;
+    width: 80%;
+}
+
+.aboutusasetus{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.aboutusfaktkast {
+    width: 60%;
+}
+
+.aboutustekstasetus {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 8em;
+}
+
+.meist {
+    text-align: center;
+    font-size: 2em;
+}
+
+.aboutuspilt {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+}
+
+.catlooking {
+    width: 300px;
+    height: auto;
+}
+
 h1 {
     border-bottom-style: none;
     border-color: black;
@@ -959,8 +1002,15 @@ section::after {
         height: auto;
     }
 
-    .postloocontainer{
+    .postloocontainer {
         width: 100%;
     }
 
+    .aboutuspilt {
+        display: none;
+    }
+
+    .aboutusfaktkast {
+        width: 100%;
+    }
 }

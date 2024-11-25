@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Meist
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="aboutuscontainer">
+    <div class="aboutusasetus">
+        <div class="aboutusfaktkast">
+            <div class="aboutustekstasetus">
+                <b class="meist">Meist</b>
+                <p class="teretulemast">Tere tulemast kassisõprade foorumisse! Meil on rõõm teid siin näha :)</p>
+                <p class="miskassisõbrad">Kassisõprade foorum on koht, kus saate oma üli vahvaid kassipilte teistega jagada ja näha ka teiste postitatud pilte.</p>
+                <p class="keslõid">
+                    Selle lehe tegid spetsiaalselt just teie jaoks TalTechi Informaatika eriala tudengid
+                    Helena Joost, Kaur Drenkhan ja Kristiina Marie Palu.
+                </p>
+            </div>
+        </div>
+        <div class="aboutuspilt">
+            <img class="catlooking" src="{{ url_for('static', filename='catswatchingyou.png') }}">
+        </div>
+    </div>
+</div>
+</body>
+
+{% endblock %}
