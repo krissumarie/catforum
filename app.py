@@ -116,9 +116,6 @@ def registreerimine():
 def postitus():
     return render_template('postitus.html')
 
-@app.route('/postituseloomine')
-def postituseloomine():
-    return render_template('postituseloomine.html')
 
 @app.route('/aboutus')
 def aboutus():
