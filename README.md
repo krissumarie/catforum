@@ -24,4 +24,6 @@ CREATE TABLE posts (
     image_path VARCHAR(255),               -- Path to the uploaded image file
     created_at TIMESTAMP DEFAULT NOW()     -- Timestamp of post creation
 );
+
+
 Siis kirjuta \dt et kontrollida, kas su tabelis on 3 rida.
