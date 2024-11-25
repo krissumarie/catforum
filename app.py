@@ -19,13 +19,6 @@ def get_db_connection():
     return psycopg.connect(app.config['POSTGRES_CONNECTION_STRING'])
 
 
-@app.route('/')
-def index():
-    if 'username' in session:
-        return render_template('index.html', username=session['username'])
-    return render_template('index.html')
-
-
 @app.route('/profiiliseaded')
 def profiiliseaded():
     return render_template('profiiliseaded.html')
@@ -36,6 +29,7 @@ def enda_konto():
         flash('You must be logged in to view this page.', 'danger')
         return redirect('/sisselogimine')
     return render_template('enda_konto.html', username=session['username'])
+
 
 @app.route('/signup', methods=["POST"])
 def signup():
@@ -185,8 +179,8 @@ def postituseloomine():
 
 
 
-@app.route('/uploads')
-def uploads():
+@app.route('/')
+def index():
     posts = []
     try:
         with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
@@ -195,23 +189,31 @@ def uploads():
                     SELECT title, text, image_path, username FROM posts ORDER BY id DESC
                 """)
                 posts = cur.fetchall()
-                print(f"Posts fetched: {posts}")  # Debug print to check data
+                print(f"Posts fetched from DB: {posts}")  # Debug print to check raw data
     except psycopg.Error as e:
         flash(f"Database error: {e}", 'danger')
+        print(f"Database error: {e}")  # Additional logging for debugging
 
-    # Normalize the image path to use forward slashes (ensure consistency)
+    # Check if data exists
+    if not posts:
+        print("No posts retrieved from the database.")
+
+    # Normalize the data structure for template usage
     posts = [{
         'headline': post[0],
         'text': post[1],
-        'image_path': post[2].replace('\\', '/'),  # Make sure to replace backslashes with forward slashes
+        'image_path': post[2].replace('\\', '/') if post[2] else None,  # Ensure None is handled
         'username': post[3]
     } for post in posts]
 
-    return render_template('uploads.html', posts=posts)
+    print(f"Posts prepared for template: {posts}")  # Debug transformed data
+    return render_template('index.html', posts=posts)
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
 
 app.secret_key = 'your_secret_key'
 
