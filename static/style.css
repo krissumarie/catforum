@@ -293,13 +293,19 @@
 }
 
 .image-upload {
+    display: inline-block;  /* Ensures the label behaves like a button */
     width: 6em;
     margin-left: 32px;
-    border-color: #B8A3A3;
+    padding: 10px 20px;  /* Add some padding to make it look more button-like */
+    border: 1px solid #B8A3A3;  /* Make sure the border color matches the design */
+    border-radius: 5px;  /* Slightly rounded corners */
+    background-color: lightgrey;
     font-size: 16px;
     cursor: pointer;
-
+    text-align: center;  /* Ensure the text is centered */
+    transition: background-color 0.3s ease;  /* Smooth background change on hover */
 }
+
 
 .postitabutton {
     display: block; /* Ensures it appears on a new line */
