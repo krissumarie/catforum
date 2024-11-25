@@ -200,6 +200,10 @@ def uploads():
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
+@app.route('/postituseloomine')
+def postituseloomine():
+    return render_template('postituseloomine.html')
+
 app.secret_key = 'your_secret_key'
 
 if __name__ == '__main__':

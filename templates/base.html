@@ -11,16 +11,15 @@
     <nav class="navbar">
         <div class="menu-toggle" onclick="toggleMenu()">☰menüü</div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('index') }}">Avaleht</a></li>
             <li><a href="{{ url_for('enda_konto') }}">Enda konto</a></li>
             <li><a href="{{ url_for('sisselogimine') }}">Sisselogimine</a></li>
-            <li><a href="{{ url_for('registreerimine') }}">Registreerimine</a></li>
             <li><a href="{{ url_for('postituseloomine') }}">Uus postitus</a></li>
             <div class="topnav-right">
                 {% if session.get('username') %}
                     <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
                 {% endif %}
-            </li>
+            </div>
             <li>
                 {% if session.get('username') %}
                     <a href="{{ url_for('create_post') }}" class="logout">Postita</a>
