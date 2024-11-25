@@ -19,13 +19,6 @@ def get_db_connection():
     return psycopg.connect(app.config['POSTGRES_CONNECTION_STRING'])
 
 
-@app.route('/')
-def index():
-    if 'username' in session:
-        return render_template('index.html', username=session['username'])
-    return render_template('index.html')
-
-
 @app.route('/profiiliseaded')
 def profiiliseaded():
     return render_template('profiiliseaded.html')
@@ -36,6 +29,7 @@ def enda_konto():
         flash('You must be logged in to view this page.', 'danger')
         return redirect('/sisselogimine')
     return render_template('enda_konto.html', username=session['username'])
+
 
 @app.route('/signup', methods=["POST"])
 def signup():
@@ -116,6 +110,11 @@ def registreerimine():
 def postitus():
     return render_template('postitus.html')
 
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
 UPLOAD_FOLDER = 'uploads'  # Folder to store uploaded files
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -128,12 +127,12 @@ def allowed_file(filename):
     """Check if the file has an allowed extension."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/create_post', methods=["GET", "POST"])
-def create_post():
+@app.route('/postituseloomine', methods=["GET", "POST"])
+def postituseloomine():
     # Check if the user is logged in
     if 'username' not in session:
         flash('You must be logged in to create a post.', 'danger')
-        return redirect('/sisselogimine')
+        return redirect('/sisselogimiSne')
 
     if request.method == 'POST':
         # Get data from the form
@@ -142,14 +141,21 @@ def create_post():
         file = request.files.get('image')
 
         # Validate form inputs
-        if not title or not text:
-            flash('Title and text are required.', 'danger')
-            return redirect('/create_post')
+        if not title:
+            flash('Title is required.', 'danger')
+            return redirect('/postituseloomine')
+        if not text:
+            flash('Text is required.', 'danger')
+            return redirect('/postituseloomine')
+        if not file or not allowed_file(file.filename):
+            flash('A valid image file is required.', 'danger')
+            return redirect('/postituseloomine')
 
         # Handle file upload
         image_path = None
-        if file and allowed_file(file.filename):
+        if file:
             filename = secure_filename(file.filename)
+            flash('File added!', 'success')
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             image_path = f"uploads/{filename}"  # Store the relative path
 
@@ -168,12 +174,13 @@ def create_post():
             flash(f'Error saving post to the database: {e}', 'danger')
 
     # Render the post creation form
-    return render_template('create_post.html')
+    return render_template('postituseloomine.html')
 
 
 
-@app.route('/uploads')
-def uploads():
+
+@app.route('/')
+def index():
     posts = []
     try:
         with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
@@ -182,27 +189,31 @@ def uploads():
                     SELECT title, text, image_path, username FROM posts ORDER BY id DESC
                 """)
                 posts = cur.fetchall()
-                print(f"Posts fetched: {posts}")  # Debug print to check data
+                print(f"Posts fetched from DB: {posts}")  # Debug print to check raw data
     except psycopg.Error as e:
         flash(f"Database error: {e}", 'danger')
+        print(f"Database error: {e}")  # Additional logging for debugging
 
-    # Normalize the image path to use forward slashes (ensure consistency)
+    # Check if data exists
+    if not posts:
+        print("No posts retrieved from the database.")
+
+    # Normalize the data structure for template usage
     posts = [{
         'headline': post[0],
         'text': post[1],
-        'image_path': post[2].replace('\\', '/'),  # Make sure to replace backslashes with forward slashes
+        'image_path': post[2].replace('\\', '/') if post[2] else None,  # Ensure None is handled
         'username': post[3]
     } for post in posts]
 
-    return render_template('uploads.html', posts=posts)
+    print(f"Posts prepared for template: {posts}")  # Debug transformed data
+    return render_template('index.html', posts=posts)
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
-@app.route('/postituseloomine')
-def postituseloomine():
-    return render_template('postituseloomine.html')
 
 app.secret_key = 'your_secret_key'
 

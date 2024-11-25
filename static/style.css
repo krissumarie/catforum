@@ -293,13 +293,19 @@
 }
 
 .image-upload {
+    display: inline-block;  /* Ensures the label behaves like a button */
     width: 6em;
     margin-left: 32px;
-    border-color: #B8A3A3;
+    padding: 10px 20px;  /* Add some padding to make it look more button-like */
+    border: 1px solid #B8A3A3;  /* Make sure the border color matches the design */
+    border-radius: 5px;  /* Slightly rounded corners */
+    background-color: lightgrey;
     font-size: 16px;
     cursor: pointer;
-
+    text-align: center;  /* Ensure the text is centered */
+    transition: background-color 0.3s ease;  /* Smooth background change on hover */
 }
+
 
 .postitabutton {
     display: block; /* Ensures it appears on a new line */
@@ -313,6 +319,49 @@
     border: none; /* Removes the default border */
     border-radius: 1em; /* Optional: Rounds the corners */
     cursor: pointer;
+}
+
+.aboutuscontainer {
+    display: flex;
+    justify-self: center;
+    margin-top: 2em;
+    width: 80%;
+}
+
+.aboutusasetus{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.aboutusfaktkast {
+    width: 60%;
+}
+
+.aboutustekstasetus {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 8em;
+}
+
+.meist {
+    text-align: center;
+    font-size: 2em;
+}
+
+.aboutuspilt {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+}
+
+.catlooking {
+    width: 300px;
+    height: auto;
 }
 
 h1 {
@@ -973,8 +1022,15 @@ section::after {
         height: auto;
     }
 
-    .postloocontainer{
+    .postloocontainer {
         width: 100%;
     }
 
+    .aboutuspilt {
+        display: none;
+    }
+
+    .aboutusfaktkast {
+        width: 100%;
+    }
 }

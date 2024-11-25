@@ -11,10 +11,14 @@ Uus postitus
         <a href="{{ url_for('index') }}" class="closepostloo">&times;</a>
         <div class="navbtekst">Loo postitus</div>
     </div>
-    <button class="image-upload">Vali pilt</button>
-    <textarea placeholder="Pealkiri" class="pealkiritekst"></textarea>
-    <textarea placeholder="Tekst" class="postlootekst"></textarea>
-    <button class="postitabutton">Postita</button>
+    <form method="POST" action="/postituseloomine" enctype="multipart/form-data">
+        <!-- Label for file input with custom text -->
+        <label for="image" class="image-upload">Vali pilt</label>
+        <input type="file" name="image" id="image" class="image-upload" style="display: none;">
+        <textarea placeholder="Pealkiri" class="pealkiritekst" name="text" id="text" rows="5" required></textarea>
+        <input placeholder="Tekst" class="postlootekst" type="text" name="title" id="title" required>
+        <button type="submit" class="postitabutton">Postita</button>
+    </form>
 </div>
 
 </body>
