@@ -15,15 +15,14 @@
             <li><a href="{{ url_for('enda_konto') }}">Enda konto</a></li>
             <li><a href="{{ url_for('sisselogimine') }}">Sisselogimine</a></li>
             <li><a href="{{ url_for('registreerimine') }}">Registreerimine</a></li>
-            <li><a href="{{ url_for('postituseloomine') }}">Uus postitus</a></li>
-            <div class="topnav-right">
+         <li>
                 {% if session.get('username') %}
-                    <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
+                    <a href="{{ url_for('postituseloomine') }}" class="logout">Postita</a>
                 {% endif %}
             </li>
-            <li>
+            <li class="topnav-right">
                 {% if session.get('username') %}
-                    <a href="{{ url_for('create_post') }}" class="logout">Postita</a>
+                    <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
                 {% endif %}
             </li>
         <li>

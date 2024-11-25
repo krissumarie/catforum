@@ -128,12 +128,12 @@ def allowed_file(filename):
     """Check if the file has an allowed extension."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/create_post', methods=["GET", "POST"])
-def create_post():
+@app.route('/postituseloomine', methods=["GET", "POST"])
+def postituseloomine():
     # Check if the user is logged in
     if 'username' not in session:
         flash('You must be logged in to create a post.', 'danger')
-        return redirect('/sisselogimine')
+        return redirect('/sisselogimiSne')
 
     if request.method == 'POST':
         # Get data from the form
@@ -142,14 +142,21 @@ def create_post():
         file = request.files.get('image')
 
         # Validate form inputs
-        if not title or not text:
-            flash('Title and text are required.', 'danger')
-            return redirect('/create_post')
+        if not title:
+            flash('Title is required.', 'danger')
+            return redirect('/postituseloomine')
+        if not text:
+            flash('Text is required.', 'danger')
+            return redirect('/postituseloomine')
+        if not file or not allowed_file(file.filename):
+            flash('A valid image file is required.', 'danger')
+            return redirect('/postituseloomine')
 
         # Handle file upload
         image_path = None
-        if file and allowed_file(file.filename):
+        if file:
             filename = secure_filename(file.filename)
+            flash('File added!', 'success')
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             image_path = f"uploads/{filename}"  # Store the relative path
 
@@ -168,7 +175,8 @@ def create_post():
             flash(f'Error saving post to the database: {e}', 'danger')
 
     # Render the post creation form
-    return render_template('create_post.html')
+    return render_template('postituseloomine.html')
+
 
 
 
