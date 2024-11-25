@@ -3,32 +3,35 @@
 {% block title %}
 Avaleht
 {% endblock %}
+
 {% block content %}
-    <body>
+<body>
     <h1>Kassisõprade foorum</h1>
-        <div class="avaleht-box">
-            <section>
-                <nav>
-                    <div class="search-container">
-                        <input type="text" class="search-box" placeholder="Otsi...">
-                        <button class="search-button">Otsi</button>
-                    </div>
-                    <ul class="avaleht-posts">
+    <div class="avaleht-box">
+        <section>
+            <nav>
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Otsi...">
+                    <button class="search-button">Otsi</button>
+                </div>
+                <ul class="avaleht-posts">
+                    {% for post in posts %}
                         <li>
-                            <a href="postitus">Postituse pealkiri</a>
-                            <img src="{{ url_for('static', filename='ksss.jpg') }}" alt="Image 1" />
+                            <h3>{{ post['headline'] }}</h3>
+                            <p>{{ post['text'] }}</p>
+                            {% if post['image_path'] %}
+                                <img src="{{ url_for('uploaded_file', filename=post['image_path'].split('/')[-1]) }}" alt="Post Image">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='default.jpg') }}" alt="Default Image">
+                            {% endif %}
+                            <p>By {{ post['username'] }}</p>
                         </li>
-                        <li>
-                            <a href="postitus">Postituse pealkiri</a>
-                            <img src="{{ url_for('static', filename='gato.jpg') }}" alt="Image 2" />
-                        </li>
-                        <li>
-                            <a href="postitus">Postituse pealkiri</a>
-                            <img src="{{ url_for('static', filename='mqdefault.jpg') }}" alt="Image 3" />
-                        </li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
-    </body>
+                    {% else %}
+                        <li>No posts available.</li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+    </div>
+</body>
 {% endblock %}
