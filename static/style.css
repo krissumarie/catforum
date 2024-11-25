@@ -416,7 +416,7 @@ section::after {
 .navbar .nav-links {
     list-style-type: none;
     display: flex;
-    gap: 100px;
+    gap: 50px;
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
 }
@@ -427,7 +427,7 @@ section::after {
     text-align: center;
     padding: 0 20px; /* Horizontal padding only */
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 50px; /* Match navbar height for vertical centering */
     display: block; /* Ensure the anchor fills the container */
 }
@@ -492,8 +492,8 @@ section::after {
      left: 1%
 }
 .topnav-right {
-    float: right;
-    padding-left: 400px;
+    float: left;
+    padding-left: 0;
 }
 .topnav a {
     float: left;
