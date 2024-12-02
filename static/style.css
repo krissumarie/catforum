@@ -22,7 +22,6 @@
     display: flex;
     gap: 4em;
     flex-direction: column;
-    padding-bottom: 6em;
 }
 
 .box2 {
@@ -30,7 +29,6 @@
     display: flex;
     gap: 3em;
     flex-direction: column;
-    margin: 2em;
     justify-content: center;
 }
 
@@ -41,11 +39,12 @@
 .change-pfp-btn {
     background-color: #E7A0B7;
     border: none;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.2s ease;
-    width: 9em;
+    width: 10em;
     height: 40px;
     transform: scale(1.05);
     align-self: center;
@@ -68,7 +67,6 @@
     height: 15em;
     color: deeppink;
     font-size: 1.5em;
-    padding-bottom: 3em;
 }
 
 .accountname {
@@ -90,11 +88,13 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.2s ease;
-    width: 9em;
-    height: 40px;
+    width: 6em;
+    height: 30px;
     transform: scale(1.05);
     align-self: center;
-    font-size: 1.2em;
+    font-size: 1em;
+    margin-top: 20px;
+    padding: 20px;
     text-decoration: None;
     align-items: center;
     display: flex;
@@ -645,6 +645,7 @@ section::after {
 
 .aikass {
     width: 100%;
+    height: 100%
 }
 
 .endakontoboxideasetus {
@@ -682,18 +683,23 @@ section::after {
 .my-button-enda-konto {
     background-color: gray;
     color: white;
-    margin: 20px;
+    margin: 15px;
+    margin-left: 3px;
     padding: 10px 20px;
     border: none;
     border-radius: 40px;
     cursor: pointer;
     text-decoration: none;
+    width: 50%;
 }
 
 .my-button-enda-konto:hover {
     background-color: rgba(255, 0, 23, 0.6)
 }
-
+.pfp{
+    width: 180px;
+    height: 180px
+}
 .my-button-enda-konto:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -870,25 +876,24 @@ section::after {
     .box {
         margin: 2em;
         display: flex;
-        gap: 4em;
         flex-direction: column;
         justify-items: center;
-        padding-bottom: 2em;
         padding-left: 23%;
     }
 
+
     .change-pfp-btn {
-        background-color: #E7A0B7;
-        border: none;
-        border-radius: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;  /* Ensures the label behaves like a button */
+        width: 6em;
+        margin-left: 32px;
+        padding: 10px 20px;  /* Add some padding to make it look more button-like */
+        border: 1px solid #B8A3A3;  /* Make sure the border color matches the design */
+        border-radius: 5px;  /* Slightly rounded corners */
+        background-color: lightgrey;
+        font-size: 16px;
         cursor: pointer;
-        transition: transform 0.2s ease;
-        width: 9em;
-        height: 40px;
-        transform: scale(1.05);
-        align-self: center;
-        font-size: 1em;
+        text-align: center;  /* Ensure the text is centered */
+        transition: background-color 0.3s ease;  /* Smooth background change on hover */
     }
 
     .accountname {
@@ -897,27 +902,29 @@ section::after {
         font-size: 1em;
     }
 
-    .faktibox {
-        height: 6em;
-        color: deeppink;
-        font-size: 1em;
-    }
+.faktibox {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Allow flexible height */
+    color: deeppink;
+    font-size: 1em;
+}
 
-    .box2 {
-        display: flex;
-        gap: 3em;
-        flex-direction: column;
-        margin: 2em;
-        justify-content: center;
-        padding-left: 13%;
-    }
+.biobox {
+    display: flex;
+    flex-direction: column; /* Ensures text aligns at the top */
+    color: deeppink;
+    font-size: 1em;
+}
 
-    .biobox {
-        height: 10em;
-        color: deeppink;
-        font-size: 1em;
-        padding-bottom: 3em;
-    }
+.bio2box {
+    height: auto; /* Allow flexible height */
+    color: deeppink;
+    font-size: 1em;
+    resize: none; /* Prevent users from resizing the box */
+    padding: 0.5em; /* Add padding inside the textarea */
+    box-sizing: border-box; /* Ensures padding doesn't affect overall dimensions */
+}
 
     .endakontobox2 {
         background-color: lavenderblush;
