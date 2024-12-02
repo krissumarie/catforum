@@ -192,37 +192,42 @@ def postituseloomine():
 
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
+    search_query = request.args.get('search', '')  # Get search query from URL parameters
     posts = []
+
     try:
         with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
             with conn.cursor() as cur:
-                # Remove 'date' from the SQL query
-                cur.execute(""" 
-                    SELECT id, title, text, image_path, username FROM posts ORDER BY id DESC
-                """)
+                # Modify the SQL query to filter posts based on search
+                if search_query:
+                    cur.execute("""
+                        SELECT id, title, text, image_path, username FROM posts
+                        WHERE title ILIKE %s OR text ILIKE %s
+                        ORDER BY id DESC
+                    """, (f'%{search_query}%', f'%{search_query}%'))
+                else:
+                    cur.execute("""
+                        SELECT id, title, text, image_path, username FROM posts
+                        ORDER BY id DESC
+                    """)
+
                 posts = cur.fetchall()
                 print(f"Posts fetched from DB: {posts}")  # Debug print to check raw data
     except psycopg.Error as e:
         flash(f"Database error: {e}", 'danger')
         print(f"Database error: {e}")  # Additional logging for debugging
 
-    # Check if data exists
-    if not posts:
-        print("No posts retrieved from the database.")
-
     # Normalize the data structure for template usage
     posts = [{
         'id': post[0],
         'headline': post[1],
         'text': post[2],
-        'image_path': post[3].replace('\\', '/') if post[3] else None,  # Ensure None is handled
+        'image_path': post[3].replace('\\', '/') if post[3] else None,
         'username': post[4]
-        # Removed 'date' as it's no longer in the query
     } for post in posts]
 
-    print(f"Posts prepared for template: {posts}")  # Debug transformed data
     return render_template('index.html', posts=posts)
 
 
