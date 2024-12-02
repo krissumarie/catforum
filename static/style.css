@@ -444,7 +444,7 @@ section::after {
     display: block; /* Make the entire area clickable */
     height: 50px; /* Match navbar height */
     line-height: 50px; /* Vertically center text */
-    padding: 0 10px; /* Horizontal padding only */
+    padding: 0 40px; /* Horizontal padding only */
 }
 
 .navbar a:hover {
@@ -786,7 +786,7 @@ section::after {
     .navbar .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #f2e6ff;
+        background-color: lavenderblush;
         width: 50%;
         position: absolute;
         top: 60px;
@@ -803,6 +803,7 @@ section::after {
         cursor: pointer;
         color: black;
         font-size: 1.5em;
+        padding: 0 10px;
     }
 
     .navbar a {
