@@ -1,7 +1,17 @@
 .boxidasetus {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 4em;
+    padding-bottom: 4em;
+}
+
+.bio2box {
+    width: 90%;
+    height: 10em;
+}
+
+.pfpbutton {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
@@ -34,6 +44,8 @@
 
 .pfp {
     width: 100%;
+    margin: 0;
+    align-self: center;
 }
 
 .change-pfp-btn {
@@ -45,10 +57,10 @@
     cursor: pointer;
     transition: transform 0.2s ease;
     width: 10em;
-    height: 40px;
     transform: scale(1.05);
     align-self: center;
     font-size: 1.2em;
+    text-align: center;
 }
 
 .change-pfp-btn:hover {background-color: rgba(248,221,229,0.6)}
@@ -64,9 +76,11 @@
 }
 
 .biobox {
-    height: 15em;
     color: deeppink;
     font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .accountname {
@@ -93,12 +107,13 @@
     transform: scale(1.05);
     align-self: center;
     font-size: 1em;
-    margin-top: 20px;
+    margin-top: 50px;
     padding: 20px;
     text-decoration: None;
     align-items: center;
     display: flex;
     justify-content: center;
+
 }
 
 .salvestabutton:hover {background-color: rgba(248,221,229,0.6)}
@@ -444,7 +459,7 @@ section::after {
     display: block; /* Make the entire area clickable */
     height: 50px; /* Match navbar height */
     line-height: 50px; /* Vertically center text */
-    padding: 0 40px; /* Horizontal padding only */
+    padding: 0 20px; /* Horizontal padding only */
 }
 
 .navbar a:hover {
@@ -475,12 +490,13 @@ section::after {
  .my-button-enda-konto {
      background-color: gray;
      color: white;
-     margin: 20px;
-     padding: 10px 20px;
      border: none;
      border-radius: 40px;
      cursor: pointer;
      text-decoration: none;
+     margin-bottom: 2em;
+     margin-top: 2em;
+
 }
 .my-button-enda-konto:hover {background-color: rgba(255,0,23,0.6)
 }
@@ -654,6 +670,7 @@ section::after {
     display: flex;
     flex-direction: column;
     width: 70%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .endakontobox1 {
@@ -661,6 +678,7 @@ section::after {
     flex-direction: column;
     width: 30%;
     padding-right: 1em;
+    align-items: center;
 }
 
 .aikass {
@@ -671,6 +689,7 @@ section::after {
 .endakontoboxideasetus {
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .heading-enda-konto {
@@ -703,14 +722,16 @@ section::after {
 .my-button-enda-konto {
     background-color: gray;
     color: white;
-    margin: 15px;
-    margin-left: 3px;
     padding: 10px 20px;
     border: none;
     border-radius: 40px;
     cursor: pointer;
     text-decoration: none;
     width: 50%;
+    justify-content: center;
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .my-button-enda-konto:hover {
@@ -718,7 +739,8 @@ section::after {
 }
 .pfp{
     width: 180px;
-    height: 180px
+    height: 180px;
+    margin-top: 2em;
 }
 .my-button-enda-konto:active {
     box-shadow: 0 5px #666;
@@ -740,6 +762,8 @@ section::after {
     height: 12em;
     background-color: lavenderblush;
     padding-left: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-top: 2em;
 }
 
 .topnav-right {
@@ -904,17 +928,18 @@ section::after {
 
 
     .change-pfp-btn {
-        display: inline-block;  /* Ensures the label behaves like a button */
-        width: 6em;
-        margin-left: 32px;
-        padding: 10px 20px;  /* Add some padding to make it look more button-like */
-        border: 1px solid #B8A3A3;  /* Make sure the border color matches the design */
-        border-radius: 5px;  /* Slightly rounded corners */
-        background-color: lightgrey;
-        font-size: 16px;
+        background-color: #E7A0B7;
+        border: none;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        text-align: center;  /* Ensure the text is centered */
-        transition: background-color 0.3s ease;  /* Smooth background change on hover */
+        transition: transform 0.2s ease;
+        width: 10em;
+        transform: scale(1.05);
+        align-self: center;
+        font-size: 1.2em;
+        text-align: center;
     }
 
     .accountname {
@@ -923,29 +948,30 @@ section::after {
         font-size: 1em;
     }
 
-.faktibox {
-    display: flex;
-    flex-direction: column;
-    height: auto; /* Allow flexible height */
-    color: deeppink;
-    font-size: 1em;
-}
+    .faktibox {
+        display: flex;
+        flex-direction: column;
+        height: auto; /* Allow flexible height */
+        color: deeppink;
+        font-size: 1em;
+    }
 
-.biobox {
-    display: flex;
-    flex-direction: column; /* Ensures text aligns at the top */
-    color: deeppink;
-    font-size: 1em;
-}
+    .biobox {
+        display: flex;
+        flex-direction: column; /* Ensures text aligns at the top */
+        color: deeppink;
+        font-size: 1em;
+        align-self: center;
+    }
 
-.bio2box {
-    height: auto; /* Allow flexible height */
-    color: deeppink;
-    font-size: 1em;
-    resize: none; /* Prevent users from resizing the box */
-    padding: 0.5em; /* Add padding inside the textarea */
-    box-sizing: border-box; /* Ensures padding doesn't affect overall dimensions */
-}
+    .bio2box {
+        height: auto; /* Allow flexible height */
+        font-size: 1em;
+        resize: none; /* Prevent users from resizing the box */
+        padding: 0.5em; /* Add padding inside the textarea */
+        box-sizing: border-box; /* Ensures padding doesn't affect overall dimensions */
+        width: 100%;
+    }
 
     .endakontobox2 {
         background-color: lavenderblush;
