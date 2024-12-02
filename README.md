@@ -25,5 +25,13 @@ CREATE TABLE posts (
     created_at TIMESTAMP DEFAULT NOW()     -- Timestamp of post creation
 );
 
+6. Enda konto muutmiseks on vaja SQL Shelli (psql) terminali sisestada:
+    CREATE TABLE user_profiles (
+    id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
+    user_id INTEGER NOT NULL UNIQUE, -- Unique identifier for the user
+    profile_picture TEXT DEFAULT '/path/to/default_image.jpg', -- Default profile picture
+    bio1 TEXT DEFAULT '', -- Default empty text for bio1
+    bio2 TEXT DEFAULT ''  -- Default empty text for bio2
+);
 
-Siis kirjuta \dt et kontrollida, kas su tabelis on 3 rida.
+Siis kirjuta \dt et kontrollida, kas su tabelis on 4 rida.
