@@ -15,16 +15,10 @@
             <li><a href="{{ url_for('enda_konto') }}">Enda konto</a></li>
             <li><a href="{{ url_for('sisselogimine') }}">Sisselogimine</a></li>
             <li><a href="{{ url_for('aboutus') }}">Meist</a></li>
-         <li>
-                {% if session.get('username') %}
-                    <a href="{{ url_for('postituseloomine') }}" class="logout">Postita</a>
-                {% endif %}
-            </li>
-            <li>
-                {% if session.get('username') %}
-                    <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
-                {% endif %}
-            </li>
+            {% if session.get('username') %}
+            <li><a href="{{ url_for('postituseloomine') }}">Postita</a></li>
+            <li><a href="{{ url_for('logout') }}" class="logout">Logi välja</a></li>
+            {% endif %}
         </ul>
     </nav>
 

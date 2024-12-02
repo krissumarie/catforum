@@ -401,34 +401,50 @@ section::after {
 
 /* Navbar style */
 .navbar {
+    border-color: #B8A3A3;
+    border-style: solid;
     background-color: lavenderblush;
-    overflow: hidden;
+    display: flex; /* Flexbox layout for navbar */
+    justify-content: space-between; /* Separate left and right sections */
+    align-items: center; /* Vertically center items */
+    height: 50px;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 50px; /* Adjust height to your preferred size */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically center content */
-    margin: 0; /* Remove default margin */
-    padding-top: 10px; /* Remove default padding */
-    padding-bottom: 10px;
+    box-sizing: border-box;
+    position: sticky; /* Makes it sticky when scrolling */
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar .nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 50px;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    display: flex; /* Arrange items in a row */
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Fill the space available */
+    justify-content: space-around;
 }
 
+.nav-links li {
+    margin: 0; /* Reset margins for list items */
+    padding: 0;
+}
+
+.nav-links .logout {
+    margin-left: auto; /* Push "Logi välja" to the far right */
+}
+
+
 .navbar a {
-    flex: 1; /* Allow links to stretch */
     color: black;
     text-align: center;
-    padding: 0 20px; /* Horizontal padding only */
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
     font-size: 14px;
-    line-height: 50px; /* Match navbar height for vertical centering */
-    display: block; /* Ensure the anchor fills the container */
+    display: block; /* Make the entire area clickable */
+    height: 50px; /* Match navbar height */
+    line-height: 50px; /* Vertically center text */
+    padding: 0 40px; /* Horizontal padding only */
 }
 
 .navbar a:hover {
@@ -776,7 +792,7 @@ section::after {
     .navbar .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #f2e6ff;
+        background-color: lavenderblush;
         width: 50%;
         position: absolute;
         top: 60px;
@@ -793,6 +809,7 @@ section::after {
         cursor: pointer;
         color: black;
         font-size: 1.5em;
+        padding: 0 10px;
     }
 
     .navbar a {
