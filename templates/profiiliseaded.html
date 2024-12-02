@@ -9,28 +9,26 @@ Profiiliseaded
     <div class="pinkline">
         <a href="{{ url_for('enda_konto') }}" class="closebutton">&times;</a>
     </div>
-    <div class="boxidasetus">
         <form action="/profiiliseaded" method="POST" enctype="multipart/form-data">
-
-            <div class="box">
-                <!-- Display dynamic profile picture -->
-                <img class="pfp" src="{{ url_for('static', filename=profile_picture.split('static/')[-1]) }}" alt="Profile Picture"/>
-                <div>
-                    <label class="change-pfp-btn" for="profile_picture">Profiilipilt</label>
-                    <input type="file" id="profile_picture" name="profile_picture" style="display: none">
+            <div class="boxidasetus">
+                <div class="box">
+                    <!-- Display dynamic profile picture -->
+                    <img class="pfp" src="{{ url_for('static', filename=profile_picture.split('static/')[-1]) }}" alt="Profile Picture"/>
+                    <div class="pfpbutton">
+                        <label class="change-pfp-btn" for="profile_picture">Profiilipilt</label>
+                        <input type="file" id="profile_picture" name="profile_picture" style="display: none">
+                    </div>
+                    <div class="faktibox">
+                        <b>Faktid</b>
+                        <textarea class="inputbox" id="bio1" name="bio1" rows="4" cols="50">{{ bio1 }}</textarea>
+                    </div>
                 </div>
-                <div class="faktibox">
-                    <b>Faktid</b>
-                    <textarea class="inputbox" id="bio1" name="bio1" rows="4" cols="50">{{ bio1 }}</textarea>
-                </div>
-
                 <div class="biobox">
                     <b>Bio</b>
                     <textarea class="bio2box" id="bio2" name="bio2" rows="4" cols="50">{{ bio2 }}</textarea>
                     <button class="salvestabutton" type="submit">Salvesta</button>
-            </div>
+                </div>
             </div>
         </form>
-    </div>
 </div>
 {% endblock %}
