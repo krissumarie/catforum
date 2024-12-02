@@ -524,7 +524,7 @@ section::after {
     padding: 20px;
     margin: 50px auto;
     background-color: lavenderblush;
-    border: 2px solid rebeccapurple;
+    border: 2px solid #B8A3A3;
     display: flex;
     gap: 20px;
 }
@@ -756,7 +756,7 @@ section::after {
     padding: 20px;
     margin: 50px auto;
     background-color: lavenderblush;
-    border: 2px solid rebeccapurple;
+    border: 2px solid #B8A3A3;
     display: flex;
     gap: 20px;
 }
@@ -783,7 +783,7 @@ section::after {
 }
 
 .postitus-image-container img {
-    width: 100%;
+    width: 500px;
     height: auto;
 }
 

@@ -17,14 +17,13 @@ Avaleht
                 <ul class="avaleht-posts">
                     {% for post in posts %}
                         <li>
-                            <h3>{{ post['headline'] }}</h3>
-                            <p>{{ post['text'] }}</p>
+                            <h3><a href="{{ url_for('postitus', post_id=post['id']) }}">{{ post['text'] }}</a></h3>
                             {% if post['image_path'] %}
                                 <img src="{{ url_for('uploaded_file', filename=post['image_path'].split('/')[-1]) }}" alt="Post Image">
                             {% else %}
                                 <img src="{{ url_for('static', filename='default.jpg') }}" alt="Default Image">
                             {% endif %}
-                            <p>By {{ post['username'] }}</p>
+                            <p>{{ post['username'] }}</p>
                         </li>
                     {% else %}
                         <li>No posts available.</li>

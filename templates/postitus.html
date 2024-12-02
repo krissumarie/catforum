@@ -1,21 +1,29 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Avaleht
+Postitus
 {% endblock %}
 
 {% block content %}
-    <body>
+<body>
     <div class="postitus-box">
         <div class="postitus-text-container">
             <div class="postitus-header">
-                <div class="postitus-title">Pealkiri</div>
-                <div class="postitus-username">kasutajanimi</div>
+                <!-- Display the post title -->
+                <div class="postitus-title">{{ post['text'] }}</div>
+                <!-- Display the post author -->
+                <div class="postitus-username">{{ post['username'] }}</div>
             </div>
-            <p>See armas kass on pehme valge kasukaga, millele lisavad karakterit mõned šarmantsed pruunid laigud, mis jagunevad hajusalt üle tema näo ja keha. Tal on suured ja säravad silmad, mis väljendavad tema nälga...</p>
+            <!-- Display the post text -->
+            <p>{{ post['title'] }}</p>
         </div>
         <div class="postitus-image-container">
-            <img class="pfp" src="{{ url_for('static', filename='ksss.jpg') }}" />
+            <!-- Display the post image -->
+            {% if post['image_path'] %}
+                <img class="pfp" src="{{ url_for('uploaded_file', filename=post['image_path'].split('/')[-1]) }}" />
+            {% else %}
+                <img class="pfp" src="{{ url_for('static', filename='default.jpg') }}" />
+            {% endif %}
         </div>
     </div>
 </body>

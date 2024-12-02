@@ -5,14 +5,16 @@ Postitused
 {% endblock %}
 
 {% block content %}
-    {% for post in posts %}
-        <div>
-            <h2>{{ post['headline'] }}</h2>
-            <p>{{ post['text'] }}</p>
-            {% if post['image_path'] %}
-                <img src="{{ url_for('uploaded_file', filename=post['image_path'].split('/')[-1]) }}" alt="Post Image">
-            {% endif %}
-            <p>By {{ post['username'] }}</p>
-        </div>
-    {% endfor %}
+    <div class="posts-container">
+        {% for post in posts %}
+            <div class="post">
+                <h2 class="post-title">{{ post['headline'] }}</h2>
+                <p class="post-text">{{ post['text'] }}</p>
+                {% if post['image_path'] %}
+                    <img class="post-image" src="{{ url_for('uploaded_file', filename=post['image_path'].split('/')[-1]) }}" alt="Post Image">
+                {% endif %}
+                <p class="post-author">By {{ post['username'] }}</p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
