@@ -95,9 +95,33 @@ def sisselogimine():
 def registreerimine():
     return render_template('registreerimine.html')
 
-@app.route('/postitus')
-def postitus():
-    return render_template('postitus.html')
+@app.route('/postitus/<int:post_id>')  # URL with post_id
+def postitus(post_id):
+    post = {}
+    try:
+        with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    SELECT title, text, image_path, username FROM posts WHERE id = %s
+                """, (post_id,))
+                post = cur.fetchone()
+                if post:
+                    post = {
+                        'title': post[0],
+                        'text': post[1],
+                        'image_path': post[2].replace('\\', '/') if post[2] else None,  # Handle None for image path
+                        'username': post[3]
+                    }
+                print(f"Post fetched from DB: {post}")  # Debugging the post data
+    except psycopg.Error as e:
+        flash(f"Database error: {e}", 'danger')
+        print(f"Database error: {e}")  # Additional logging for debugging
+
+    if not post:
+        flash("Post not found", 'warning')
+        return redirect(url_for('index'))  # Redirect to the index page if post is not found
+
+    return render_template('postitus.html', post=post)
 
 
 @app.route('/aboutus')
@@ -174,8 +198,9 @@ def index():
     try:
         with psycopg.connect(app.config['POSTGRES_CONNECTION_STRING']) as conn:
             with conn.cursor() as cur:
-                cur.execute("""
-                    SELECT title, text, image_path, username FROM posts ORDER BY id DESC
+                # Remove 'date' from the SQL query
+                cur.execute(""" 
+                    SELECT id, title, text, image_path, username FROM posts ORDER BY id DESC
                 """)
                 posts = cur.fetchall()
                 print(f"Posts fetched from DB: {posts}")  # Debug print to check raw data
@@ -189,10 +214,12 @@ def index():
 
     # Normalize the data structure for template usage
     posts = [{
-        'headline': post[0],
-        'text': post[1],
-        'image_path': post[2].replace('\\', '/') if post[2] else None,  # Ensure None is handled
-        'username': post[3]
+        'id': post[0],
+        'headline': post[1],
+        'text': post[2],
+        'image_path': post[3].replace('\\', '/') if post[3] else None,  # Ensure None is handled
+        'username': post[4]
+        # Removed 'date' as it's no longer in the query
     } for post in posts]
 
     print(f"Posts prepared for template: {posts}")  # Debug transformed data
