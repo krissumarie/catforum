@@ -11,8 +11,10 @@ Avaleht
         <section>
             <nav>
                 <div class="search-container">
-                    <input type="text" class="search-box" placeholder="Otsi...">
-                    <button class="search-button">Otsi</button>
+                    <form method="GET" action="{{ url_for('index') }}">
+                        <input type="text" class="search-box" name="search" placeholder="Otsi..." value="{{ request.args.get('search', '') }}">
+                        <button class="search-button" type="submit">Otsi</button>
+                    </form>
                 </div>
                 <ul class="avaleht-posts">
                     {% for post in posts %}
