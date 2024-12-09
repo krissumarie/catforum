@@ -23,7 +23,7 @@
 .pinkline {
     width: 100%;
     height: 50px;
-    background-color: palevioletred;
+    background-color: #B8A3A3;
 }
 
 .box {
@@ -49,7 +49,7 @@
 }
 
 .change-pfp-btn {
-    background-color: #E7A0B7;
+    background-color: #B8A3A3;
     border: none;
     padding: 10px;
     border-radius: 20px;
@@ -76,7 +76,7 @@
 }
 
 .biobox {
-    color: deeppink;
+    color: grey;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
@@ -85,18 +85,18 @@
 
 .accountname {
     height: 3em;
-    color: deeppink;
+    color: #B8A3A3;
     font-size: 1.5em;
 }
 
 .faktibox {
     height: 8em;
-    color: deeppink;
+    color: grey;
     font-size: 1.5em;
 }
 
 .salvestabutton {
-    background-color: #E7A0B7;
+    background-color: #B8A3A3;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -181,6 +181,8 @@
     align-content: center;
 }
 
+.logisisse:hover {background-color: rgba(248,221,229,0.6)}
+
 .logisisse {
     background-color: rgba(236,208,216,0.6);
     border-color: #333333;
@@ -249,6 +251,41 @@
     padding-bottom: 0.1em;
 }
 
+.preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px; /* Set height of the container */
+    width: 200px;  /* Set width of the container */
+    border: 2px dashed #ddd; /* Dashed border to show where the image will go */
+    border-radius: 5px; /* Optional rounded corners */
+    background-color: #f9f9f9; /* Light background to differentiate it */
+    position: relative;
+    margin: 10px auto; /* Center the container */
+}
+
+#postImagePreview {
+    max-width: 100%; /* Ensures the image fits within the container */
+    max-height: 100%; /* Prevents overflow */
+    display: none; /* Hidden by default */
+    object-fit: cover; /* Ensures the image fills the container nicely */
+}
+
+.placeholder {
+    color: #aaa; /* Light text color for the placeholder */
+    font-size: 14px;
+    text-align: center;
+}
+
+#postImagePreview.show {
+    display: block; /* Show the image when it is selected */
+}
+
+.placeholder.hidden {
+    display: none; /* Hide the placeholder when the image is selected */
+}
+
 .postloocontainer {
     display: flex;
     justify-self: center;
@@ -272,6 +309,8 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.closepostloo:hover {background-color: rgba(248,221,229,0.6)}
 
 .closepostloo {
     position: absolute;
@@ -307,6 +346,8 @@
     height: 10em;
 }
 
+.image-upload:hover {background-color: grey}
+
 .image-upload {
     display: inline-block;  /* Ensures the label behaves like a button */
     width: 6em;
@@ -321,6 +362,8 @@
     transition: background-color 0.3s ease;  /* Smooth background change on hover */
 }
 
+
+.postitabutton:hover {background-color: grey}
 
 .postitabutton {
     display: block; /* Ensures it appears on a new line */
@@ -498,8 +541,6 @@ section::after {
      margin-top: 2em;
 
 }
-.my-button-enda-konto:hover {background-color: rgba(255,0,23,0.6)
-}
 
 .my-button-enda-konto:active {
   box-shadow: 0 5px #666;
@@ -655,7 +696,7 @@ section::after {
 }
 
 .search-button:hover {
-  background-color: lavenderblush;
+  background-color: #B8A3A3;
 }
 
 .endakontocontainer {
@@ -720,8 +761,8 @@ section::after {
 }
 
 .my-button-enda-konto {
-    background-color: gray;
-    color: white;
+    background-color: #B8A3A3;
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 40px;
@@ -735,7 +776,7 @@ section::after {
 }
 
 .my-button-enda-konto:hover {
-    background-color: rgba(255, 0, 23, 0.6)
+    background-color: lavenderblush;
 }
 .pfp{
     width: 180px;
@@ -928,7 +969,6 @@ section::after {
 
 
     .change-pfp-btn {
-        background-color: #E7A0B7;
         border: none;
         padding: 10px;
         border-radius: 20px;
@@ -952,14 +992,12 @@ section::after {
         display: flex;
         flex-direction: column;
         height: auto; /* Allow flexible height */
-        color: deeppink;
         font-size: 1em;
     }
 
     .biobox {
         display: flex;
         flex-direction: column; /* Ensures text aligns at the top */
-        color: deeppink;
         font-size: 1em;
         align-self: center;
     }

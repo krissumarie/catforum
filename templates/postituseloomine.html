@@ -14,7 +14,11 @@ Uus postitus
     <form method="POST" action="/postituseloomine" enctype="multipart/form-data">
         <!-- Label for file input with custom text -->
         <label for="image" class="image-upload">Vali pilt</label>
-        <input type="file" name="image" id="image" class="image-upload" style="display: none;">
+        <input type="file" name="image" id="image" class="image-upload" style="display: none;" onchange="previewPostImage(event)">
+        <div class="preview-container">
+            <img id="postImagePreview" src="#" alt="Image Preview" style="display: none;" />
+            <div id="placeholder" class="placeholder">Pildi eelvaade</div>
+        </div>
         <textarea placeholder="Pealkiri" class="pealkiritekst" name="text" id="text" rows="5" required></textarea>
         <input placeholder="Tekst" class="postlootekst" type="text" name="title" id="title" required>
         <button type="submit" class="postitabutton">Postita</button>
