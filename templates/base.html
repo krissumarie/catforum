@@ -12,12 +12,14 @@
         <div class="menu-toggle" onclick="toggleMenu()">☰menüü</div>
         <ul class="nav-links" id="nav-links">
             <li><a href="{{ url_for('index') }}">Avaleht</a></li>
-            <li><a href="{{ url_for('enda_konto') }}">Enda konto</a></li>
-            <li><a href="{{ url_for('sisselogimine') }}">Sisselogimine</a></li>
             <li><a href="{{ url_for('aboutus') }}">Meist</a></li>
+            {% if not session.get('username') %}
+                <li><a href="{{ url_for('sisselogimine') }}">Sisselogimine</a></li>
+            {% endif %}
             {% if session.get('username') %}
-            <li><a href="{{ url_for('postituseloomine') }}">Postita</a></li>
-            <li><a href="{{ url_for('logout') }}" class="logout">Logi välja</a></li>
+                <li><a href="{{ url_for('enda_konto') }}">Enda konto</a></li>
+                <li><a href="{{ url_for('postituseloomine') }}">Postita</a></li>
+                <li><a href="{{ url_for('logout') }}" class="logout">Logi välja</a></li>
             {% endif %}
         </ul>
     </nav>
