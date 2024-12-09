@@ -23,7 +23,7 @@
 .pinkline {
     width: 100%;
     height: 50px;
-    background-color: palevioletred;
+    background-color: #B8A3A3;
 }
 
 .box {
@@ -49,7 +49,7 @@
 }
 
 .change-pfp-btn {
-    background-color: #E7A0B7;
+    background-color: #B8A3A3;
     border: none;
     padding: 10px;
     border-radius: 20px;
@@ -76,7 +76,7 @@
 }
 
 .biobox {
-    color: deeppink;
+    color: grey;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
@@ -85,18 +85,18 @@
 
 .accountname {
     height: 3em;
-    color: deeppink;
+    color: #B8A3A3;
     font-size: 1.5em;
 }
 
 .faktibox {
     height: 8em;
-    color: deeppink;
+    color: grey;
     font-size: 1.5em;
 }
 
 .salvestabutton {
-    background-color: #E7A0B7;
+    background-color: #B8A3A3;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -180,6 +180,8 @@
     margin: 20px;
     align-content: center;
 }
+
+.logisisse:hover {background-color: rgba(248,221,229,0.6)}
 
 .logisisse {
     background-color: rgba(236,208,216,0.6);
@@ -273,6 +275,8 @@
     font-weight: bold;
 }
 
+.closepostloo:hover {background-color: rgba(248,221,229,0.6)}
+
 .closepostloo {
     position: absolute;
     right: 20px;
@@ -307,6 +311,8 @@
     height: 10em;
 }
 
+.image-upload:hover {background-color: grey}
+
 .image-upload {
     display: inline-block;  /* Ensures the label behaves like a button */
     width: 6em;
@@ -321,6 +327,8 @@
     transition: background-color 0.3s ease;  /* Smooth background change on hover */
 }
 
+
+.postitabutton:hover {background-color: grey}
 
 .postitabutton {
     display: block; /* Ensures it appears on a new line */
@@ -498,8 +506,6 @@ section::after {
      margin-top: 2em;
 
 }
-.my-button-enda-konto:hover {background-color: rgba(255,0,23,0.6)
-}
 
 .my-button-enda-konto:active {
   box-shadow: 0 5px #666;
@@ -655,7 +661,7 @@ section::after {
 }
 
 .search-button:hover {
-  background-color: lavenderblush;
+  background-color: #B8A3A3;
 }
 
 .endakontocontainer {
@@ -720,8 +726,8 @@ section::after {
 }
 
 .my-button-enda-konto {
-    background-color: gray;
-    color: white;
+    background-color: #B8A3A3;
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 40px;
@@ -735,7 +741,7 @@ section::after {
 }
 
 .my-button-enda-konto:hover {
-    background-color: rgba(255, 0, 23, 0.6)
+    background-color: lavenderblush;
 }
 .pfp{
     width: 180px;
