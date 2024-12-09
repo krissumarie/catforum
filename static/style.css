@@ -251,6 +251,41 @@
     padding-bottom: 0.1em;
 }
 
+.preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px; /* Set height of the container */
+    width: 200px;  /* Set width of the container */
+    border: 2px dashed #ddd; /* Dashed border to show where the image will go */
+    border-radius: 5px; /* Optional rounded corners */
+    background-color: #f9f9f9; /* Light background to differentiate it */
+    position: relative;
+    margin: 10px auto; /* Center the container */
+}
+
+#postImagePreview {
+    max-width: 100%; /* Ensures the image fits within the container */
+    max-height: 100%; /* Prevents overflow */
+    display: none; /* Hidden by default */
+    object-fit: cover; /* Ensures the image fills the container nicely */
+}
+
+.placeholder {
+    color: #aaa; /* Light text color for the placeholder */
+    font-size: 14px;
+    text-align: center;
+}
+
+#postImagePreview.show {
+    display: block; /* Show the image when it is selected */
+}
+
+.placeholder.hidden {
+    display: none; /* Hide the placeholder when the image is selected */
+}
+
 .postloocontainer {
     display: flex;
     justify-self: center;
@@ -934,7 +969,6 @@ section::after {
 
 
     .change-pfp-btn {
-        background-color: #E7A0B7;
         border: none;
         padding: 10px;
         border-radius: 20px;
@@ -958,14 +992,12 @@ section::after {
         display: flex;
         flex-direction: column;
         height: auto; /* Allow flexible height */
-        color: deeppink;
         font-size: 1em;
     }
 
     .biobox {
         display: flex;
         flex-direction: column; /* Ensures text aligns at the top */
-        color: deeppink;
         font-size: 1em;
         align-self: center;
     }

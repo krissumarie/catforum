@@ -13,10 +13,12 @@ Profiiliseaded
             <div class="boxidasetus">
                 <div class="box">
                     <!-- Display dynamic profile picture -->
-                    <img class="pfp" src="{{ url_for('static', filename=profile_picture.split('static/')[-1]) }}" alt="Profile Picture"/>
+                    <img id="profilePicturePreview" class="pfp"
+                     src="{{ url_for('static', filename=profile_picture.split('static/')[-1]) }}"
+                     alt="Profile Picture"/>
                     <div class="pfpbutton">
                         <label class="change-pfp-btn" for="profile_picture">Profiilipilt</label>
-                        <input type="file" id="profile_picture" name="profile_picture" style="display: none">
+                        <input type="file" id="profile_picture" name="profile_picture" style="display: none" accept="image/*" onchange="previewProfilePicture(event)">
                     </div>
                     <div class="faktibox">
                         <b>Faktid</b>
